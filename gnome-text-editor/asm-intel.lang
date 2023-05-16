@@ -140,6 +140,7 @@ https://gist.github.com/mrbesher/5c98da1c220d10e2aba8276554d3456c#file-asm-intel
 		    	<keyword>dd</keyword>
 		    	<keyword>dq</keyword>
 		      <keyword>dt</keyword>
+		      <keyword>ddq</keyword>
 		      <keyword>do</keyword>
 		      <keyword>dy</keyword>
 		      <keyword>dz</keyword>
@@ -151,6 +152,16 @@ https://gist.github.com/mrbesher/5c98da1c220d10e2aba8276554d3456c#file-asm-intel
 					<keyword>short</keyword>
 		    	<keyword>near</keyword>
 		    	<keyword>far</keyword>
+
+          <keyword>resb</keyword>
+		    	<keyword>resw</keyword>
+		    	<keyword>resd</keyword>
+		    	<keyword>resq</keyword>
+		    	<keyword>rest</keyword>
+          <keyword>reso</keyword>
+		    	<keyword>resdq</keyword>
+		    	<keyword>resy</keyword>
+		    	<keyword>resz</keyword>
 
 		    	<keyword>byte</keyword>
 		    	<keyword>word</keyword>
