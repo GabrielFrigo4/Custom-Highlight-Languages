@@ -13,6 +13,7 @@ https://gist.github.com/mrbesher/5c98da1c220d10e2aba8276554d3456c#file-asm-intel
 	<styles>
 		<style id="preprocessor"            name="Preprocessor"           map-to="def:preprocessor"/>
 		<style id="section"                 name="Section"                map-to="def:keyword"/>
+		<style id="macro"                   name="Macro"                  map-to="def:keyword"/>
 		<style id="keyword"                 name="Keyword"                map-to="def:keyword"/>
 		<style id="comment"                 name="Comment"                map-to="def:comment"/>
 		<style id="operator"                name="Operator"               map-to="def:operator"/>
@@ -43,7 +44,7 @@ https://gist.github.com/mrbesher/5c98da1c220d10e2aba8276554d3456c#file-asm-intel
 				</context>
 				-->
 				<context id="operator" style-ref="operator">
-					<match>[-.,:\+\*\/\(\)\{\}\[\]|\$]</match>
+					<match>[-.,:\+\*\/\(\)\{\}\[\]|%?\$]</match>
 				</context>
 				<context id="string" style-ref="string">
 					<start>&quot;|\`</start>
@@ -74,13 +75,38 @@ https://gist.github.com/mrbesher/5c98da1c220d10e2aba8276554d3456c#file-asm-intel
 				<context id="hex2" style-ref="decimal">
 					<match>\b0[0-9a-fA-F][Hh]\b</match>
 				</context>
-				<context id="section-type" style-ref="section">
+				<context id="macros" style-ref="macro">
+          <!-- NASM -->
+          <!-- does not belong to NASM float macros
+          <keyword>Inf</keyword>
+          <keyword>NaN</keyword>
+          -->
+          <keyword>Infinity</keyword>
+          <keyword>QNaN</keyword>
+          <keyword>SNaN</keyword>
+          <keyword>float8</keyword>
+          <keyword>float16</keyword>
+          <keyword>bfloat16</keyword>
+          <keyword>float32</keyword>
+          <keyword>float64</keyword>
+          <keyword>float80m</keyword>
+          <keyword>float80e</keyword>
+          <keyword>float128l</keyword>
+          <keyword>float128h</keyword>
+				</context>
+				<context id="sections" style-ref="section">
+          <keyword>data</keyword>
+					
+				  <!-- NASM & GNU -->
 					<keyword>text</keyword>
-		    	<keyword>data</keyword>
+					<keyword>bss</keyword>
 		    	<keyword>rdata</keyword>
-		    	<keyword>bss</keyword>
 		    	<keyword>pdata</keyword>
 		    	<keyword>xdata</keyword>
+		    	
+		    	<!-- MASM -->
+          <keyword>code</keyword>
+          <keyword>const</keyword>
 				</context>
 				<context id="commands" style-ref="preprocessor">
 					<keyword>format</keyword>
@@ -113,6 +139,10 @@ https://gist.github.com/mrbesher/5c98da1c220d10e2aba8276554d3456c#file-asm-intel
 		    	<keyword>dw</keyword>
 		    	<keyword>dd</keyword>
 		    	<keyword>dq</keyword>
+		      <keyword>dt</keyword>
+		      <keyword>do</keyword>
+		      <keyword>dy</keyword>
+		      <keyword>dz</keyword>
 
 		    	<keyword>rb</keyword>
 		    	<keyword>rw</keyword>
@@ -126,6 +156,38 @@ https://gist.github.com/mrbesher/5c98da1c220d10e2aba8276554d3456c#file-asm-intel
 		    	<keyword>word</keyword>
 		    	<keyword>dword</keyword>
 		    	<keyword>qword</keyword>
+		    	<keyword>tword</keyword>
+		    	
+		    	<!-- NASM -->
+		    	<keyword>strict</keyword>
+		    	<keyword>oword</keyword>
+		    	<keyword>yword</keyword>
+		    	<keyword>zword</keyword>
+		    	
+		    	<!-- GNU -->
+          <keyword>xmmword</keyword>
+		    	<keyword>ymmword</keyword>
+		    	<keyword>zmmword</keyword>
+
+          <!-- NASM -->
+          <!-- does not belong to NASM float macros
+          <keyword>Inf</keyword>
+          <keyword>NaN</keyword>
+          -->
+          <keyword>Infinity</keyword>
+          <keyword>QNaN</keyword>
+          <keyword>SNaN</keyword>
+          
+          <!-- NASM -->
+          <keyword>float8</keyword>
+          <keyword>float16</keyword>
+          <keyword>bfloat16</keyword>
+          <keyword>float32</keyword>
+          <keyword>float64</keyword>
+          <keyword>float80m</keyword>
+          <keyword>float80e</keyword>
+          <keyword>float128l</keyword>
+          <keyword>float128h</keyword>
 				</context>
 				<context id="instructions" style-ref="keyword">
 					<keyword>aaa</keyword>
@@ -1138,15 +1200,6 @@ https://gist.github.com/mrbesher/5c98da1c220d10e2aba8276554d3456c#file-asm-intel
 					<keyword>r14</keyword>
 					<keyword>r15</keyword>
 
-					<keyword>xmm8</keyword>
-					<keyword>xmm9</keyword>
-					<keyword>xmm10</keyword>
-					<keyword>xmm11</keyword>
-					<keyword>xmm12</keyword>
-					<keyword>xmm13</keyword>
-					<keyword>xmm14</keyword>
-					<keyword>xmm15</keyword>
-
 					<!-- intel 386 -->
 
 					<keyword>eax</keyword>
@@ -1216,6 +1269,8 @@ https://gist.github.com/mrbesher/5c98da1c220d10e2aba8276554d3456c#file-asm-intel
 					<keyword>mm6</keyword>
 					<keyword>mm7</keyword>
 
+          <!-- AVX -->
+
 					<keyword>xmm0</keyword>
 					<keyword>xmm1</keyword>
 					<keyword>xmm2</keyword>
@@ -1249,6 +1304,8 @@ https://gist.github.com/mrbesher/5c98da1c220d10e2aba8276554d3456c#file-asm-intel
 					<keyword>xmm30</keyword>
 					<keyword>xmm31</keyword>
 					
+					<!-- AVX2 -->
+					
 					<keyword>ymm0</keyword>
 					<keyword>ymm1</keyword>
 					<keyword>ymm2</keyword>
@@ -1281,6 +1338,8 @@ https://gist.github.com/mrbesher/5c98da1c220d10e2aba8276554d3456c#file-asm-intel
 					<keyword>ymm29</keyword>
 					<keyword>ymm30</keyword>
 					<keyword>ymm31</keyword>
+					
+					<!-- AVX512 -->
 					
 					<keyword>zmm0</keyword>
 					<keyword>zmm1</keyword>
