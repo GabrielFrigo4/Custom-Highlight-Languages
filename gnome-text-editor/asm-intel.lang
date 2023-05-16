@@ -1255,7 +1255,7 @@ https://gist.github.com/mrbesher/5c98da1c220d10e2aba8276554d3456c#file-asm-intel
 					<keyword>mm6</keyword>
 					<keyword>mm7</keyword>
 
-          				<!-- AVX -->
+					<!-- AVX -->
 
 					<keyword>xmm0</keyword>
 					<keyword>xmm1</keyword>
@@ -1265,7 +1265,7 @@ https://gist.github.com/mrbesher/5c98da1c220d10e2aba8276554d3456c#file-asm-intel
 					<keyword>xmm5</keyword>
 					<keyword>xmm6</keyword>
 					<keyword>xmm7</keyword>
-          				<keyword>xmm8</keyword>
+					<keyword>xmm8</keyword>
 					<keyword>xmm9</keyword>
 					<keyword>xmm10</keyword>
 					<keyword>xmm11</keyword>
@@ -1300,7 +1300,7 @@ https://gist.github.com/mrbesher/5c98da1c220d10e2aba8276554d3456c#file-asm-intel
 					<keyword>ymm5</keyword>
 					<keyword>ymm6</keyword>
 					<keyword>ymm7</keyword>
-          				<keyword>ymm8</keyword>
+					<keyword>ymm8</keyword>
 					<keyword>ymm9</keyword>
 					<keyword>ymm10</keyword>
 					<keyword>ymm11</keyword>
@@ -1316,7 +1316,7 @@ https://gist.github.com/mrbesher/5c98da1c220d10e2aba8276554d3456c#file-asm-intel
 					<keyword>ymm21</keyword>
 					<keyword>ymm22</keyword>
 					<keyword>ymm23</keyword>
-          				<keyword>ymm24</keyword>
+					<keyword>ymm24</keyword>
 					<keyword>ymm25</keyword>
 					<keyword>ymm26</keyword>
 					<keyword>ymm27</keyword>
@@ -1335,7 +1335,7 @@ https://gist.github.com/mrbesher/5c98da1c220d10e2aba8276554d3456c#file-asm-intel
 					<keyword>zmm5</keyword>
 					<keyword>zmm6</keyword>
 					<keyword>zmm7</keyword>
-          				<keyword>zmm8</keyword>
+					<keyword>zmm8</keyword>
 					<keyword>zmm9</keyword>
 					<keyword>zmm10</keyword>
 					<keyword>zmm11</keyword>
@@ -1351,7 +1351,7 @@ https://gist.github.com/mrbesher/5c98da1c220d10e2aba8276554d3456c#file-asm-intel
 					<keyword>zmm21</keyword>
 					<keyword>zmm22</keyword>
 					<keyword>zmm23</keyword>
-          				<keyword>zmm24</keyword>
+					<keyword>zmm24</keyword>
 					<keyword>zmm25</keyword>
 					<keyword>zmm26</keyword>
 					<keyword>zmm27</keyword>
