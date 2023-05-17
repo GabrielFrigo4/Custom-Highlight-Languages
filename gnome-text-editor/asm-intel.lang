@@ -5,7 +5,7 @@ https://wiki.gnome.org/Projects/GtkSourceView/LanguageDefinitions?action=AttachF
 https://gist.github.com/mrbesher/5c98da1c220d10e2aba8276554d3456c#file-asm-intel-lang
 -->
 <!-- About this highlighting file-lang
-version: 1.0
+version: 1.1
 web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-text-editor/asm-intel.lang
 -->
 <language id="assembler" name="Assembler (Intel)" version="2.0" section="Sources">
@@ -368,36 +368,36 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 					<keyword>pushad</keyword>
 					<keyword>pushfd</keyword>
 					<keyword>scasd</keyword>
-					<keyword>SETA</keyword>
-					<keyword>SETAE</keyword>
-					<keyword>SETB</keyword>
-					<keyword>SETBE</keyword>
-					<keyword>SETC</keyword>
-					<keyword>SETE</keyword>
-					<keyword>SETG</keyword>
-					<keyword>SETGE</keyword>
-					<keyword>SETL</keyword>
-					<keyword>SETLE</keyword>
-					<keyword>SETNA</keyword>
-					<keyword>SETNAE</keyword>
-					<keyword>SETNB</keyword>
-					<keyword>SETNBE</keyword>
-					<keyword>SETNC</keyword>
-					<keyword>SETNE</keyword>
-					<keyword>SETNG</keyword>
-					<keyword>SETNGE</keyword>
-					<keyword>SETNL</keyword>
-					<keyword>SETNLE</keyword>
-					<keyword>SETNO</keyword>
-					<keyword>SETNP</keyword>
-					<keyword>SETNS</keyword>
-					<keyword>SETNZ</keyword>
-					<keyword>SETO</keyword>
-					<keyword>SETP</keyword>
-					<keyword>SETPE</keyword>
-					<keyword>SETPO</keyword>
-					<keyword>SETS</keyword>
-					<keyword>SETZ</keyword>
+					<keyword>seta</keyword>
+					<keyword>setae</keyword>
+					<keyword>setb</keyword>
+					<keyword>setbe</keyword>
+					<keyword>setc</keyword>
+					<keyword>sete</keyword>
+					<keyword>setg</keyword>
+					<keyword>setge</keyword>
+					<keyword>setl</keyword>
+					<keyword>setle</keyword>
+					<keyword>setna</keyword>
+					<keyword>setnae</keyword>
+					<keyword>setnb</keyword>
+					<keyword>setnbe</keyword>
+					<keyword>setnc</keyword>
+					<keyword>setne</keyword>
+					<keyword>setng</keyword>
+					<keyword>setnge</keyword>
+					<keyword>setnl</keyword>
+					<keyword>setnle</keyword>
+					<keyword>setno</keyword>
+					<keyword>setnp</keyword>
+					<keyword>setns</keyword>
+					<keyword>setnz</keyword>
+					<keyword>seto</keyword>
+					<keyword>setp</keyword>
+					<keyword>setpe</keyword>
+					<keyword>setpo</keyword>
+					<keyword>sets</keyword>
+					<keyword>setz</keyword>
 					<keyword>shld</keyword>
 					<keyword>shrd</keyword>
 					<keyword>stosd</keyword>
@@ -1041,6 +1041,42 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 					<keyword>aesdeclast</keyword>
 					<keyword>aeskeygenassist</keyword>
 					<keyword>aesimc</keyword>
+					
+					<!-- Xeon Phi -->
+					
+					<keyword>PREFETCHWT1</keyword>
+					<keyword>V4FMADDPS</keyword>
+					<keyword>V4FMADDSS</keyword>
+					<keyword>V4FNMADDPS</keyword>
+					<keyword>V4FNMADDSS</keyword>
+					<keyword>VEXP2PD</keyword>
+					<keyword>VEXP2PS</keyword>
+					<keyword>VGATHERPF0DPD</keyword>
+					<keyword>VGATHERPF0DPS</keyword>
+					<keyword>VGATHERPF0QPD</keyword>
+					<keyword>VGATHERPF0QPS</keyword>
+					<keyword>VGATHERPF1DPD</keyword>
+					<keyword>VGATHERPF1DPS</keyword>
+					<keyword>VGATHERPF1QPD</keyword>
+					<keyword>VGATHERPF1QPS</keyword>
+					<keyword>VP4DPWSSD</keyword>
+					<keyword>VP4DPWSSDS</keyword>
+					<keyword>VRCP28PD</keyword>
+					<keyword>VRCP28PS</keyword>
+					<keyword>VRCP28SD</keyword>
+					<keyword>VRCP28SS</keyword>
+					<keyword>VRSQRT28PD</keyword>
+					<keyword>VRSQRT28PS</keyword>
+					<keyword>VRSQRT28SD</keyword>
+					<keyword>VRSQRT28SS</keyword>
+					<keyword>VSCATTERPF0DPD</keyword>
+					<keyword>VSCATTERPF0DPS</keyword>
+					<keyword>VSCATTERPF0QPD</keyword>
+					<keyword>VSCATTERPF0QPS</keyword>
+					<keyword>VSCATTERPF1DPD</keyword>
+					<keyword>VSCATTERPF1DPS</keyword>
+					<keyword>VSCATTERPF1QPD</keyword>
+					<keyword>VSCATTERPF1QPS</keyword>
 				</context>
 				<context id="registers" style-ref="type">
 					<!-- intel x86-64 -->
