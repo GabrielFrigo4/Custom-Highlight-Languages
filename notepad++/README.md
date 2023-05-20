@@ -1,1 +1,1 @@
-
+# Notepad++ Custom Highlight Languages
