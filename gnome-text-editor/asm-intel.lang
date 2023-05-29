@@ -5,7 +5,7 @@ https://wiki.gnome.org/Projects/GtkSourceView/LanguageDefinitions?action=AttachF
 https://gist.github.com/mrbesher/5c98da1c220d10e2aba8276554d3456c#file-asm-intel-lang
 -->
 <!-- About this highlighting file-lang
-version: 1.2 beta2
+version: 1.2 beta3
 web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-text-editor/asm-intel.lang
 -->
 <language id="assembler" name="Assembler (Intel)" version="2.0" section="Sources">
@@ -48,7 +48,7 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 				</context>
 				-->
 				<context id="operator" style-ref="operator">
-					<match>[-.,:\+\*\/\(\)\{\}\[\]|%?\$]</match>
+					<match>[-.,:\+\*\/\(\)\{\}\[\]|%?\$\=]</match>
 				</context>
 				<context id="string" style-ref="string">
 					<start>&quot;|\`</start>
@@ -1038,44 +1038,44 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 					<keyword>vfnmsubss</keyword>
 					
 					<!-- AVX / AVX2 / AVX512 Instructions-->
-
+					
+					<keyword>VADDPH</keyword>
+					<keyword>VADDSH</keyword>
+					<keyword>VALIGND</keyword>
+					<keyword>VALIGNQ</keyword>
+					<keyword>VBLENDMPD</keyword>
+					<keyword>VBLENDMPS</keyword>
+					<keyword>VBROADCAST</keyword>
+					<keyword>VCMPPH</keyword>
+					<keyword>VCMPSH</keyword>
+					<keyword>VCOMISH</keyword>
+					<keyword>VCOMPRESSPD</keyword>
+					<keyword>VCOMPRESSPS</keyword>
+					<keyword>VCOMPRESSW</keyword>
+					<keyword>VCVTDQ2PH</keyword>
+					<keyword>VCVTNE2PS2BF16</keyword>
+					<keyword>VCVTNEPS2BF16</keyword>
+					<keyword>VCVTPD2PH</keyword>
+					<keyword>VCVTPD2QQ</keyword>
+					<keyword>VCVTPD2UDQ</keyword>
+					<keyword>VCVTPD2UQQ</keyword>
+					<keyword>VCVTPH2DQ</keyword>
+					<keyword>VCVTPH2PD</keyword>
+					<keyword>VCVTPH2PS</keyword>
+					<keyword>VCVTPH2PSX</keyword>
+					<keyword>VCVTPH2QQ</keyword>
+					<keyword>VCVTPH2UDQ</keyword>
+					<keyword>VCVTPH2UQQ</keyword>
+					<keyword>VCVTPH2UW</keyword>
+					<keyword>VCVTPH2W</keyword>
+					<keyword>VCVTPS2PH</keyword>
+					<keyword>VCVTPS2PHX</keyword>
+					<keyword>VCVTPS2QQ</keyword>
+					<keyword>VCVTPS2UDQ</keyword>
+					<keyword>VCVTPS2UQQ</keyword>
+					<keyword>VCVTQQ2PD</keyword>
 <!--
-<keyword></keyword>					
-VADDPH	Add Packed FP16 Values
-VADDSH	Add Scalar FP16 Values
-VALIGND	Align Doubleword/Quadword Vectors
-VALIGNQ	Align Doubleword/Quadword Vectors
-VBLENDMPD	Blend Float64/Float32 Vectors Using an OpMask Control
-VBLENDMPS	Blend Float64/Float32 Vectors Using an OpMask Control
-VBROADCAST	Load with Broadcast Floating-Point Data
-VCMPPH	Compare Packed FP16 Values
-VCMPSH	Compare Scalar FP16 Values
-VCOMISH	Compare Scalar Ordered FP16 Values and Set EFLAGS
-VCOMPRESSPD	Store Sparse Packed Double Precision Floating-Point Values Into DenseMemory
-VCOMPRESSPS	Store Sparse Packed Single Precision Floating-Point Values Into Dense Memory
-VCOMPRESSW	Store Sparse Packed Byte/Word Integer Values Into DenseMemory/Register
-VCVTDQ2PH	Convert Packed Signed Doubleword Integers to Packed FP16 Values
-VCVTNE2PS2BF16	Convert Two Packed Single Data to One Packed BF16 Data
-VCVTNEPS2BF16	Convert Packed Single Data to Packed BF16 Data
-VCVTPD2PH	Convert Packed Double Precision FP Values to Packed FP16 Values
-VCVTPD2QQ	Convert Packed Double Precision Floating-Point Values to Packed QuadwordIntegers
-VCVTPD2UDQ	Convert Packed Double Precision Floating-Point Values to Packed UnsignedDoubleword Integers
-VCVTPD2UQQ	Convert Packed Double Precision Floating-Point Values to Packed UnsignedQuadword Integers
-VCVTPH2DQ	Convert Packed FP16 Values to Signed Doubleword Integers
-VCVTPH2PD	Convert Packed FP16 Values to FP64 Values
-VCVTPH2PS	Convert Packed FP16 Values to Single Precision Floating-PointValues
-VCVTPH2PSX	Convert Packed FP16 Values to Single Precision Floating-PointValues
-VCVTPH2QQ	Convert Packed FP16 Values to Signed Quadword Integer Values
-VCVTPH2UDQ	Convert Packed FP16 Values to Unsigned Doubleword Integers
-VCVTPH2UQQ	Convert Packed FP16 Values to Unsigned Quadword Integers
-VCVTPH2UW	Convert Packed FP16 Values to Unsigned Word Integers
-VCVTPH2W	Convert Packed FP16 Values to Signed Word Integers
-VCVTPS2PH	Convert Single-Precision FP Value to 16-bit FP Value
-VCVTPS2PHX	Convert Packed Single Precision Floating-Point Values to Packed FP16 Values
-VCVTPS2QQ	Convert Packed Single Precision Floating-Point Values to Packed SignedQuadword Integer Values
-VCVTPS2UDQ	Convert Packed Single Precision Floating-Point Values to Packed UnsignedDoubleword Integer Values
-VCVTPS2UQQ	Convert Packed Single Precision Floating-Point Values to Packed UnsignedQuadword Integer Values
-VCVTQQ2PD	Convert Packed Quadword Integers to Packed Double Precision Floating-PointValues
+<keyword></keyword>
 VCVTQQ2PH	Convert Packed Signed Quadword Integers to Packed FP16 Values
 VCVTQQ2PS	Convert Packed Quadword Integers to Packed Single Precision Floating-PointValues
 VCVTSD2SH	Convert Low FP64 Value to an FP16 Value
@@ -1118,8 +1118,6 @@ VDBPSADBW	Double Block Packed Sum-Absolute-Differences (SAD) on Unsigned Bytes
 VDIVPH	Divide Packed FP16 Values
 VDIVSH	Divide Scalar FP16 Values
 VDPBF16PS	Dot Product of BF16 Pairs Accumulated Into Packed Single Precision
-VERR	Verify a Segment for Reading or Writing
-VERW	Verify a Segment for Reading or Writing
 VEXPANDPD	Load Sparse Packed Double Precision Floating-Point Values From Dense Memory
 VEXPANDPS	Load Sparse Packed Single Precision Floating-Point Values From Dense Memory
 VEXTRACTF128	Extract Packed Floating-Point Values
