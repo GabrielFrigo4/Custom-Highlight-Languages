@@ -5,7 +5,7 @@ https://wiki.gnome.org/Projects/GtkSourceView/LanguageDefinitions?action=AttachF
 https://gist.github.com/mrbesher/5c98da1c220d10e2aba8276554d3456c#file-asm-intel-lang
 -->
 <!-- About this highlighting file-lang
-version: 1.2 beta3
+version: 1.2 beta4
 web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-text-editor/asm-intel.lang
 -->
 <language id="assembler" name="Assembler (Intel)" version="2.0" section="Sources">
@@ -1490,6 +1490,8 @@ VZEROUPPER	Zero Upper Bits of YMM and ZMM Registers
 					
 					<!-- VMX Instructions -->
 					
+					<!-- Added with Intel VT-x -->
+					
 					<keyword>INVEPT</keyword>
 					<keyword>INVVPID</keyword>
 					<keyword>VMCALL</keyword>
@@ -1501,7 +1503,7 @@ VZEROUPPER	Zero Upper Bits of YMM and ZMM Registers
 					<keyword>VMREAD</keyword>
 					<keyword>VMRESUME</keyword>
 					<keyword>VMWRITE</keyword>
-					<keyword>VMWRITE</keyword>
+					<keyword>VMXOFF</keyword>
 					<keyword>VMXON</keyword>
 					
 					<!-- Xeon Phi Instructions -->
