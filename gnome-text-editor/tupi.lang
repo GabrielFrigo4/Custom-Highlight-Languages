@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "language.dtd">
+<!-- About this highlighting file-lang
+version: 0.0
+web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-text-editor/tupi.lang
+-->
+<language id="tupi" name="Tupi" version="2.0" section="Sources">
+	<metadata>
+		<property name="mimetypes">text/x-asm;text/x-assembler</property>
+		<property name="globs">*.tp;*.th</property>
+	</metadata>
+
+	<styles>
+		<style id="preprocessor"			name="Preprocessor"		   map-to="def:preprocessor"/>
+		<style id="section"				 name="Section"				map-to="def:keyword"/>
+		<style id="macro"				   name="Macro"				  map-to="def:keyword"/>
+		<style id="keyword"				 name="Keyword"				map-to="def:keyword"/>
+		<style id="comment"				 name="Comment"				map-to="def:comment"/>
+		<style id="operator"				name="Operator"			   map-to="def:operator"/>
+		<style id="string"				  name="String"				 map-to="def:string"/>
+		<style id="escaped-character"	   name="Escaped Character"	  map-to="def:special-char"/>
+		<style id="character"			   name="Character"			  map-to="def:character"/>
+		<style id="decimal"				 name="Data Type"			  map-to="def:decimal"/>
+		<style id="type"					name="Data Type"			  map-to="def:type"/>
+	</styles>
+
+	<default-regex-options case-sensitive="false"/>
+	  
+	<definitions>
+		<context id="assembler">
+			<include>
+				<context id="comment-line" style-ref="comment">
+					<start>\$\$</start>
+					<end>$</end>
+				</context>
+				<context id="comment-multiline" style-ref="comment">
+					<start>\(\$</start>
+					<end>\$\)</end>
+				</context>
+				<context id="operator" style-ref="operator">
+					<match>[-.,:\+\*\/\(\)\{\}\[\]|%?\$\=]</match>
+				</context>
+				<context id="string" style-ref="string">
+					<start>&quot;|\`</start>
+					<end>&quot;|\`</end>
+				</context>
+				<context id="char" style-ref="character">
+					<start>\'</start>
+					<end>\'</end>
+				</context>
+				<context id="escape" style-ref="escaped-character">
+					<match>\\.</match>
+				</context>
+				<context id="label" style-ref="preprocessor">
+					<match>^[A-Za-z_][A-Za-z_0-9]*\:</match>
+				</context>
+				<context id="local-label" style-ref="preprocessor">
+					<match>.[A-Za-z_0-9]*\:</match>
+				</context>
+				<context id="decimal" style-ref="decimal">
+					<match>\b([1-9][0-9]*|0)([Uu]([Ll]|LL|ll)?|([Ll]|LL|ll)[Uu]?)?\b</match>
+				</context>
+				<context id="float" style-ref="decimal">
+					<match>\b([0-9]+[Ee][-]?[0-9]+|([0-9]*\.[0-9]+|[0-9]+\.)([Ee][-]?[0-9]+)?)[fFlL]?</match>
+				</context>
+				<context id="hex1" style-ref="decimal">
+					<match>\b0[xX][0-9a-fA-F]+([Uu]([Ll]|LL|ll)?|([Ll]|LL|ll)[Uu]?)?\b</match>
+				</context>
+				<context id="hex2" style-ref="decimal">
+					<match>\b0[0-9a-fA-F][Hh]\b</match>
+				</context>
+				<context id="macros" style-ref="macro">
+				</context>
+				<context id="sections" style-ref="section">
+					<keyword>config</keyword>
+					<keyword>using</keyword>
+					<keyword>macro</keyword>
+					<keyword>type</keyword>
+					<keyword>wdata</keyword>
+					<keyword>rdata</keyword>
+					<keyword>text</keyword>
+					<keyword>stack</keyword>
+					<keyword>code</keyword>
+				</context>
+				<context id="commands" style-ref="preprocessor">
+				</context>
+				<context id="instructions" style-ref="keyword">
+				</context>
+				<context id="types" style-ref="type">
+    					<keyword>i8</keyword>
+					<keyword>i16</keyword>
+					<keyword>i32</keyword>
+					<keyword>i64</keyword>
+					<keyword>u8</keyword>
+					<keyword>u16</keyword>
+					<keyword>u32</keyword>
+					<keyword>u64</keyword>
+					<keyword>f8</keyword>
+					<keyword>f16</keyword>
+					<keyword>f32</keyword>
+					<keyword>f64</keyword>
+					<keyword>c8</keyword>
+					<keyword>c16</keyword>
+					<keyword>c32</keyword>
+					<keyword>ref</keyword>
+					<keyword>sref</keyword>
+					<keyword>void</keyword>
+				</context>
+			</include>
+		</context>
+	</definitions>
+</language>
