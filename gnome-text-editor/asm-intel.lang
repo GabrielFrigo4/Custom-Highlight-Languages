@@ -10,7 +10,7 @@ https://wiki.osdev.org/CPU_Registers_x86-64
 https://www.felixcloutier.com/x86/
 -->
 <!-- About this highlighting file-lang
-version: 1.8
+version: 1.9
 web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-text-editor/asm-intel.lang
 -->
 <language id="assembler" name="Assembler (Intel)" version="2.0" section="Sources">
@@ -187,6 +187,7 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 					<keyword>long</keyword>
 					<keyword>quad</keyword>
 					<keyword>ascii</keyword>
+					<keyword>asciz</keyword>
 					<keyword>xmmword</keyword>
 					<keyword>ymmword</keyword>
 					<keyword>zmmword</keyword>
