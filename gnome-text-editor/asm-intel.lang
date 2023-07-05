@@ -10,13 +10,13 @@ https://wiki.osdev.org/CPU_Registers_x86-64
 https://www.felixcloutier.com/x86/
 -->
 <!-- About this highlighting file-lang
-version: 1.7beta
+version: 1.7
 web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-text-editor/asm-intel.lang
 -->
 <language id="assembler" name="Assembler (Intel)" version="2.0" section="Sources">
 	<metadata>
 		<property name="mimetypes">text/x-asm;text/x-assembler</property>
-		<property name="globs">*.asm;*.s;*.inc</property>
+		<property name="globs">*.asm;*.s;*.S;*.inc</property>
 	</metadata>
 
 	<styles>
