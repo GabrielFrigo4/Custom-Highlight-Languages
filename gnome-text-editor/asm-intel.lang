@@ -10,27 +10,27 @@ https://wiki.osdev.org/CPU_Registers_x86-64
 https://www.felixcloutier.com/x86/
 -->
 <!-- About this highlighting file-lang
-version: 1.9
+version: 1.10
 web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-text-editor/asm-intel.lang
 -->
 <language id="assembler" name="Assembler (Intel)" version="2.0" section="Sources">
 	<metadata>
 		<property name="mimetypes">text/x-asm;text/x-assembler</property>
-		<property name="globs">*.asm;*.s;*.S;*.inc</property>
+		<property name="globs">*.S;*.s;*.asm;*.inc</property>
 	</metadata>
 
 	<styles>
-		<style id="preprocessor"			name="Preprocessor"		   map-to="def:preprocessor"/>
-		<style id="section"				 name="Section"				map-to="def:keyword"/>
-		<style id="macro"				   name="Macro"				  map-to="def:keyword"/>
-		<style id="keyword"				 name="Keyword"				map-to="def:keyword"/>
-		<style id="comment"				 name="Comment"				map-to="def:comment"/>
-		<style id="operator"				name="Operator"			   map-to="def:operator"/>
-		<style id="string"				  name="String"				 map-to="def:string"/>
-		<style id="escaped-character"	   name="Escaped Character"	  map-to="def:special-char"/>
-		<style id="character"			   name="Character"			  map-to="def:character"/>
-		<style id="decimal"				 name="Data Type"			  map-to="def:decimal"/>
-		<style id="type"					name="Data Type"			  map-to="def:type"/>
+		<style id="preprocessor"		name="Preprocessor"			map-to="def:preprocessor"/>
+		<style id="section"			name="Section"				map-to="def:keyword"/>
+		<style id="macro"			name="Macro"				map-to="def:keyword"/>
+		<style id="keyword"			name="Keyword"				map-to="def:keyword"/>
+		<style id="comment"			name="Comment"				map-to="def:comment"/>
+		<style id="operator"			name="Operator"				map-to="def:operator"/>
+		<style id="string"			name="String"				map-to="def:string"/>
+		<style id="escaped-character"		name="Escaped Character"		map-to="def:special-char"/>
+		<style id="character"			name="Character"			map-to="def:character"/>
+		<style id="decimal"			name="Data Type"			map-to="def:decimal"/>
+		<style id="type"			name="Data Type"			map-to="def:type"/>
 	</styles>
 
 	<default-regex-options case-sensitive="false"/>
@@ -86,10 +86,6 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 				</context>
 				<context id="macros" style-ref="macro">
 					<!-- NASM -->
-					<!-- does not belong to NASM float macros
-					<keyword>Inf</keyword>
-					<keyword>NaN</keyword>
-					-->
 					<keyword>Infinity</keyword>
 					<keyword>QNaN</keyword>
 					<keyword>SNaN</keyword>
@@ -128,6 +124,7 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 
 					<keyword>equ</keyword>
 					<keyword>times</keyword>
+					<keyword>dub</keyword>
 					<keyword>if</keyword>
 					<keyword>repeat</keyword>
 					<keyword>while</keyword>
