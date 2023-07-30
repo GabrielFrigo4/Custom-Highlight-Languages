@@ -10,7 +10,7 @@ https://wiki.osdev.org/CPU_Registers_x86-64
 https://www.felixcloutier.com/x86/
 -->
 <!-- About this highlighting file-lang
-version: 1.10
+version: 1.11 beta1
 web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-text-editor/asm-intel.lang
 -->
 <language id="assembler" name="Assembler (Intel)" version="2.0" section="Sources">
@@ -85,7 +85,10 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 					<match>\b0[0-9a-fA-F][Hh]\b</match>
 				</context>
 				<context id="macros" style-ref="macro">
-					<!-- NASM -->
+					<!-- NASM all -->
+					<keyword>__</keyword>
+
+					<!-- NASM float -->
 					<keyword>Infinity</keyword>
 					<keyword>QNaN</keyword>
 					<keyword>SNaN</keyword>
@@ -98,6 +101,14 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 					<keyword>float80e</keyword>
 					<keyword>float128l</keyword>
 					<keyword>float128h</keyword>
+
+					<!-- NASM string -->
+					<keyword>utf16</keyword>
+					<keyword>utf16le</keyword>
+					<keyword>utf16be</keyword>
+					<keyword>utf32</keyword>
+					<keyword>utf32le</keyword>
+					<keyword>utf32be</keyword>
 				</context>
 				<context id="sections" style-ref="section">
 					<keyword>text</keyword>
