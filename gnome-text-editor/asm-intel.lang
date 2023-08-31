@@ -10,7 +10,8 @@ https://wiki.osdev.org/CPU_Registers_x86-64
 https://www.felixcloutier.com/x86/
 -->
 <!-- About this highlighting file-lang
-version: 1.11
+assembler sintax: NASM, FASM, GAS
+version: 1.12
 web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-text-editor/asm-intel.lang
 -->
 <language id="assembler" name="Assembler (Intel)" version="2.0" section="Sources">
@@ -111,6 +112,7 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 					<keyword>utf32be</keyword>
 				</context>
 				<context id="sections" style-ref="section">
+					<keyword>code</keyword>
 					<keyword>text</keyword>
 					<keyword>bss</keyword>
 					<keyword>rdata</keyword>
@@ -118,6 +120,11 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 					<keyword>pdata</keyword>
 					<keyword>xdata</keyword>
 					<keyword>data</keyword>
+
+					<!-- FASM -->
+					<keyword>readable</keyword>
+					<keyword>writeable</keyword>
+					<keyword>executable</keyword>
 				</context>
 				<context id="commands" style-ref="preprocessor">
 					<keyword>format</keyword>
@@ -182,7 +189,17 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 					<keyword>dword</keyword>
 					<keyword>qword</keyword>
 					<keyword>tword</keyword>
-				
+
+					<!-- FASM -->
+					<keyword>import</keyword>
+					<keyword>format</keyword>
+					<keyword>entry</keyword>
+					<keyword>console</keyword>
+					<keyword>PE</keyword>
+					<keyword>PE64</keyword>
+					<keyword>ELF</keyword>
+					<keyword>ELF64</keyword>
+
 					<!-- NASM -->
 					<keyword>rel</keyword>
 					<keyword>abs</keyword>
