@@ -11,7 +11,7 @@ https://www.felixcloutier.com/x86/
 -->
 <!-- About this Highlighting File-Lang
 assembler sintax: NASM, FASM, GAS
-version: 2.2
+version: 2.3
 web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-text-editor/asm-intel.lang
 -->
 <language id="assembler" name="Assembler (Intel)" version="2.0" section="Sources">
