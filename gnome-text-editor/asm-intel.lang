@@ -9,7 +9,7 @@ https://en.wikipedia.org/wiki/Advanced_Vector_Extensions
 https://wiki.osdev.org/CPU_Registers_x86-64
 https://www.felixcloutier.com/x86/
 -->
-<!-- About this highlighting file-lang
+<!-- About this Highlighting File-Lang
 assembler sintax: NASM, FASM, GAS
 version: 1.18
 web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-text-editor/asm-intel.lang
