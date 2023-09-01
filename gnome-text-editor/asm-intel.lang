@@ -11,10 +11,10 @@ https://www.felixcloutier.com/x86/
 -->
 <!-- About this highlighting file-lang
 assembler sintax: NASM, FASM, GAS
-version: 1.14
+version: 1.15
 web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-text-editor/asm-intel.lang
 -->
-<language id="assembly" name="Assembly (Intel)" version="2.0" section="Sources">
+<language id="assembler" name="Assembler (Intel)" version="2.0" section="Sources">
 	<metadata>
 		<property name="mimetypes">text/x-asm;text/x-assembler</property>
 		<property name="globs">*.S;*.s;*.asm;*.inc</property>
@@ -83,6 +83,42 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 					<!-- NASM -->
 					<keyword>__</keyword>
 
+					<!-- NASM version -->
+					<keyword>NASM_MAJOR</keyword>
+					<keyword>NASM_MINOR</keyword>
+					<keyword>NASM_SUBMINOR</keyword>
+					<keyword>NASM_PATCHLEVEL</keyword>
+					<keyword>NASM_SNAPSHOT</keyword>
+					<keyword>NASM_VERSION_ID</keyword>
+					<keyword>NASM_VER</keyword>
+
+					<!-- NASM file/line -->
+					<keyword>FILE</keyword>
+					<keyword>LINE</keyword>
+
+					<!-- NASM mode -->
+					<keyword>BITS</keyword>
+
+					<!-- NASM output -->
+					<keyword>OUTPUT_FORMAT</keyword>
+
+					<!-- NASM debug -->
+					<keyword>DEBUG_FORMAT</keyword>
+
+					<!-- NASM date/time -->
+					<keyword>DATE</keyword>
+					<keyword>TIME</keyword>
+					<keyword>DATE_NUM</keyword>
+					<keyword>TIME_NUM</keyword>
+					<keyword>UTC_DATE</keyword>
+					<keyword>UTC_TIME</keyword>
+					<keyword>UTC_DATE_NUM</keyword>
+					<keyword>UTC_TIME_NUM</keyword>
+					<keyword>POSIX_TIME</keyword>
+
+					<!-- NASM pass -->
+					<keyword>PASS</keyword>
+
 					<!-- NASM float -->
 					<keyword>Infinity</keyword>
 					<keyword>QNaN</keyword>
@@ -132,7 +168,46 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 					<keyword>executable</keyword>
 				</context>
 				<context id="commands" style-ref="preprocessor">
+					<keyword>if</keyword>
+					<keyword>elif</keyword>
+					<keyword>else</keyword>
+					<keyword>endif</keyword>
+					<keyword>ifdef</keyword>
+					<keyword>ifmacro</keyword>
+					<keyword>ifctx</keyword>
+					<keyword>ifnctx</keyword>
+					<keyword>elifctx</keyword>
+					<keyword>elifnctx</keyword>
+					<keyword>ifidn</keyword>
+					<keyword>ifidni</keyword>
+					<keyword>ifid</keyword>
+					<keyword>ifnum</keyword>
+					<keyword>ifstr</keyword>
+					<keyword>iftoken</keyword>
+					<keyword>ifempty</keyword>
+					<keyword>ifenv</keyword>
+
+					<keyword>include</keyword>
+					<keyword>macro</keyword>
+					<keyword>pathsearch</keyword>
+					<keyword>depend</keyword>
+					<keyword>use</keyword>
+					<keyword>push</keyword>
+					<keyword>pop</keyword>
+					<keyword>rep</keyword>
+					<keyword>repl</keyword>
+					<keyword>arg</keyword>
+					<keyword>stacksize</keyword>
+					<keyword>local</keyword>
+
+					<keyword>error</keyword>
+					<keyword>warning</keyword>
+					<keyword>fatal</keyword>
 					<keyword>pragma</keyword>
+
+					<keyword>line</keyword>
+					<keyword>clear</keyword>
+
 					<keyword>uppercase</keyword>
 					<keyword>format</keyword>
 					<keyword>use16</keyword>
@@ -159,9 +234,6 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 
 					<keyword>display</keyword>
 					<keyword>err</keyword>
-
-					<keyword>include</keyword>
-					<keyword>macro</keyword>
 
 					<keyword>db</keyword> <keyword>du</keyword>
 					<keyword>dw</keyword>
