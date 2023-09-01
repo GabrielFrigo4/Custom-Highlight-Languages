@@ -11,7 +11,7 @@ https://www.felixcloutier.com/x86/
 -->
 <!-- About this Highlighting File-Lang
 assembler sintax: NASM, FASM, GAS
-version: 1.18
+version: 2.0
 web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-text-editor/asm-intel.lang
 -->
 <language id="assembler" name="Assembler (Intel)" version="2.0" section="Sources">
@@ -79,64 +79,14 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 				<context id="hex2" style-ref="decimal">
 					<match>\b0[0-9a-fA-F][Hh]\b</match>
 				</context>
-				<context id="macros" style-ref="macro">
-					<!-- NASM -->
-					<keyword>__</keyword>
-
-					<!-- NASM version -->
-					<keyword>NASM_MAJOR</keyword>
-					<keyword>NASM_MINOR</keyword>
-					<keyword>NASM_SUBMINOR</keyword>
-					<keyword>NASM_PATCHLEVEL</keyword>
-					<keyword>NASM_SNAPSHOT</keyword>
-					<keyword>NASM_VERSION_ID</keyword>
-					<keyword>NASM_VER</keyword>
-
-					<!-- NASM file/line -->
-					<keyword>FILE</keyword>
-					<keyword>LINE</keyword>
-
-					<!-- NASM output -->
-					<keyword>OUTPUT_FORMAT</keyword>
-
-					<!-- NASM debug -->
-					<keyword>DEBUG_FORMAT</keyword>
-
-					<!-- NASM date/time -->
-					<keyword>DATE</keyword>
-					<keyword>TIME</keyword>
-					<keyword>DATE_NUM</keyword>
-					<keyword>TIME_NUM</keyword>
-					<keyword>UTC_DATE</keyword>
-					<keyword>UTC_TIME</keyword>
-					<keyword>UTC_DATE_NUM</keyword>
-					<keyword>UTC_TIME_NUM</keyword>
-					<keyword>POSIX_TIME</keyword>
-
-					<!-- NASM pass -->
-					<keyword>PASS</keyword>
-
-					<!-- NASM float -->
-					<keyword>Infinity</keyword>
-					<keyword>QNaN</keyword>
-					<keyword>SNaN</keyword>
-					<keyword>float8</keyword>
-					<keyword>float16</keyword>
-					<keyword>bfloat16</keyword>
-					<keyword>float32</keyword>
-					<keyword>float64</keyword>
-					<keyword>float80m</keyword>
-					<keyword>float80e</keyword>
-					<keyword>float128l</keyword>
-					<keyword>float128h</keyword>
-
-					<!-- NASM string -->
-					<keyword>utf16</keyword>
-					<keyword>utf16le</keyword>
-					<keyword>utf16be</keyword>
-					<keyword>utf32</keyword>
-					<keyword>utf32le</keyword>
-					<keyword>utf32be</keyword>
+				<context id="macros-nasm-assembler" style-ref="macro">
+					<match>(^|[ \t])+(__)\?\b(?i)(NASM_MAJOR|NASM_MINOR|NASM_SUBMINOR|NASM_PATCHLEVEL|NASM_SNAPSHOT|NASM_VERSION_ID|NASM_VER|FILE|LINE|BITS|OUTPUT_FORMAT|DEBUG_FORMAT|DATE|TIME|DATE_NUM|TIME_NUM|UTC_DATE|UTC_TIME|UTC_DATE_NUM|UTC_TIME_NUM|POSIX_TIME|PASS)(?-i)\b\?(__)+($|[ \t\(])</match>
+				</context>
+				<context id="macros-nasm-float" style-ref="macro">
+					<match>(^|[ \t])+(__)\?\b(?i)(Infinity|QNaN|SNaN|float8|float16|bfloat16|float32|float64|float80m|float80e|float128l|float128h)(?-i)\b\?(__)+($|[ \t\(])</match>
+				</context>
+				<context id="macros-nasm-string" style-ref="macro">
+					<match>(^|[ \t])+(__)\?\b(?i)(utf16|utf16le|utf16be|utf32|utf32le|utf32be)(?-i)\b\?(__)+($|[ \t\(])</match>
 				</context>
 				<context id="sections" style-ref="section">
 					<keyword>code</keyword>
@@ -1532,15 +1482,15 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 					<keyword>xsetbv</keyword>
 					<keyword>xsusldtrk</keyword>
 					<keyword>xtest</keyword>
-					
+
 					<!-- SGX Instructions -->
 					<keyword>encls</keyword>
 					<keyword>enclu</keyword>
 					<keyword>enclv</keyword>
-					
+
 					<!-- SMX Instructions -->
 					<keyword>getsec</keyword>
-					
+
 					<!-- VMX Instructions -->
 					<keyword>invept</keyword>
 					<keyword>invvpid</keyword>
@@ -1555,9 +1505,8 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 					<keyword>vmwrite</keyword>
 					<keyword>vmxoff</keyword>
 					<keyword>vmxon</keyword>
-					
+
 					<!-- Xeon Phi Instructions -->
-					
 					<keyword>prefetchwt1</keyword>
 					<keyword>v4fmaddps</keyword>
 					<keyword>v4fmaddss</keyword>
@@ -1603,23 +1552,6 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 					<keyword>rsp</keyword>
 					<keyword>rbp</keyword>
 
-					<keyword>r0</keyword>
-					<keyword>r1</keyword>
-					<keyword>r2</keyword>
-					<keyword>r3</keyword>
-					<keyword>r4</keyword>
-					<keyword>r5</keyword>
-					<keyword>r6</keyword>
-					<keyword>r7</keyword>
-					<keyword>r8</keyword>
-					<keyword>r9</keyword>
-					<keyword>r10</keyword>
-					<keyword>r11</keyword>
-					<keyword>r12</keyword>
-					<keyword>r13</keyword>
-					<keyword>r14</keyword>
-					<keyword>r15</keyword>
-
 					<!-- intel 386 -->
 					<keyword>eax</keyword>
 					<keyword>ebx</keyword>
@@ -1654,144 +1586,30 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 					<keyword>es</keyword>
 					<keyword>fs</keyword>
 					<keyword>gs</keyword>
-
-					<keyword>cr0</keyword>
-					<keyword>cr2</keyword>
-					<keyword>cr3</keyword>
-
-					<keyword>db0</keyword>
-					<keyword>db1</keyword>
-					<keyword>db2</keyword>
-					<keyword>db3</keyword>
-					<keyword>db6</keyword>
-					<keyword>db7</keyword>
-
-					<keyword>tr6</keyword>
-					<keyword>tr7</keyword>
-
+					
+					<!-- intel x87 -->
 					<keyword>st</keyword>
-					<keyword>st0</keyword>
-					<keyword>st1</keyword>
-					<keyword>st2</keyword>
-					<keyword>st3</keyword>
-					<keyword>st4</keyword>
-					<keyword>st5</keyword>
-					<keyword>st6</keyword>
-					<keyword>st7</keyword>
-
-					<keyword>mm0</keyword>
-					<keyword>mm1</keyword>
-					<keyword>mm2</keyword>
-					<keyword>mm3</keyword>
-					<keyword>mm4</keyword>
-					<keyword>mm5</keyword>
-					<keyword>mm6</keyword>
-					<keyword>mm7</keyword>
-
-					<!-- AVX -->
-					<keyword>xmm0</keyword>
-					<keyword>xmm1</keyword>
-					<keyword>xmm2</keyword>
-					<keyword>xmm3</keyword>
-					<keyword>xmm4</keyword>
-					<keyword>xmm5</keyword>
-					<keyword>xmm6</keyword>
-					<keyword>xmm7</keyword>
-
-					<!-- AVX2 -->
-					<keyword>xmm8</keyword>
-					<keyword>xmm9</keyword>
-					<keyword>xmm10</keyword>
-					<keyword>xmm11</keyword>
-					<keyword>xmm12</keyword>
-					<keyword>xmm13</keyword>
-					<keyword>xmm14</keyword>
-					<keyword>xmm15</keyword>
-					
-					<keyword>ymm0</keyword>
-					<keyword>ymm1</keyword>
-					<keyword>ymm2</keyword>
-					<keyword>ymm3</keyword>
-					<keyword>ymm4</keyword>
-					<keyword>ymm5</keyword>
-					<keyword>ymm6</keyword>
-					<keyword>ymm7</keyword>
-					<keyword>ymm8</keyword>
-					<keyword>ymm9</keyword>
-					<keyword>ymm10</keyword>
-					<keyword>ymm11</keyword>
-					<keyword>ymm12</keyword>
-					<keyword>ymm13</keyword>
-					<keyword>ymm14</keyword>
-					<keyword>ymm15</keyword>
-					
-					<!-- AVX512 -->
-					<keyword>xmm16</keyword>
-					<keyword>xmm17</keyword>
-					<keyword>xmm18</keyword>
-					<keyword>xmm19</keyword>
-					<keyword>xmm20</keyword>
-					<keyword>xmm21</keyword>
-					<keyword>xmm22</keyword>
-					<keyword>xmm23</keyword>
-					<keyword>xmm24</keyword>
-					<keyword>xmm25</keyword>
-					<keyword>xmm26</keyword>
-					<keyword>xmm27</keyword>
-					<keyword>xmm28</keyword>
-					<keyword>xmm29</keyword>
-					<keyword>xmm30</keyword>
-					<keyword>xmm31</keyword>
-					
-					<keyword>ymm16</keyword>
-					<keyword>ymm17</keyword>
-					<keyword>ymm18</keyword>
-					<keyword>ymm19</keyword>
-					<keyword>ymm20</keyword>
-					<keyword>ymm21</keyword>
-					<keyword>ymm22</keyword>
-					<keyword>ymm23</keyword>
-					<keyword>ymm24</keyword>
-					<keyword>ymm25</keyword>
-					<keyword>ymm26</keyword>
-					<keyword>ymm27</keyword>
-					<keyword>ymm28</keyword>
-					<keyword>ymm29</keyword>
-					<keyword>ymm30</keyword>
-					<keyword>ymm31</keyword>
-					
-					<keyword>zmm0</keyword>
-					<keyword>zmm1</keyword>
-					<keyword>zmm2</keyword>
-					<keyword>zmm3</keyword>
-					<keyword>zmm4</keyword>
-					<keyword>zmm5</keyword>
-					<keyword>zmm6</keyword>
-					<keyword>zmm7</keyword>
-					<keyword>zmm8</keyword>
-					<keyword>zmm9</keyword>
-					<keyword>zmm10</keyword>
-					<keyword>zmm11</keyword>
-					<keyword>zmm12</keyword>
-					<keyword>zmm13</keyword>
-					<keyword>zmm14</keyword>
-					<keyword>zmm15</keyword>
-					<keyword>zmm16</keyword>
-					<keyword>zmm17</keyword>
-					<keyword>zmm18</keyword>
-					<keyword>zmm19</keyword>
-					<keyword>zmm20</keyword>
-					<keyword>zmm21</keyword>
-					<keyword>zmm22</keyword>
-					<keyword>zmm23</keyword>
-					<keyword>zmm24</keyword>
-					<keyword>zmm25</keyword>
-					<keyword>zmm26</keyword>
-					<keyword>zmm27</keyword>
-					<keyword>zmm28</keyword>
-					<keyword>zmm29</keyword>
-					<keyword>zmm30</keyword>
-					<keyword>zmm31</keyword>
+				</context>
+				<context id="registers-general" style-ref="type">
+					<match>\b(?i)r([0-9]|1[0-5])(|d|w|b)(?-i)\b</match>
+				</context>
+				<context id="registers-control" style-ref="type">
+					<match>\b(?i)cr([0-9]|1[0-5])(?-i)\b</match>
+				</context>
+				<context id="registers-debug" style-ref="type">
+					<match>\b(?i)db[0-7](?-i)\b</match>
+				</context>
+				<context id="registers-test" style-ref="type">
+					<match>\b(?i)tr[0-7](?-i)\b</match>
+				</context>
+				<context id="registers-fpu" style-ref="type">
+					<match>\b(?i)st[0-7](?-i)\b</match>
+				</context>
+				<context id="registers-sse" style-ref="type">
+					<match>\b(?i)mm[0-7](?-i)\b</match>
+				</context>
+				<context id="registers-avx" style-ref="type">
+					<match>\b(?i)(x|y|z)mm([0-9]|[1-2][0-9]|3[0-1])(?-i)\b</match>
 				</context>
 			</include>
 		</context>
