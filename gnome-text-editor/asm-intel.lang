@@ -11,7 +11,7 @@ https://www.felixcloutier.com/x86/
 -->
 <!-- About this highlighting file-lang
 assembler sintax: NASM, FASM, GAS
-version: 1.15
+version: 1.16
 web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-text-editor/asm-intel.lang
 -->
 <language id="assembler" name="Assembler (Intel)" version="2.0" section="Sources">
@@ -96,9 +96,6 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 					<keyword>FILE</keyword>
 					<keyword>LINE</keyword>
 
-					<!-- NASM mode -->
-					<keyword>BITS</keyword>
-
 					<!-- NASM output -->
 					<keyword>OUTPUT_FORMAT</keyword>
 
@@ -166,6 +163,16 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 					<keyword>readable</keyword>
 					<keyword>writeable</keyword>
 					<keyword>executable</keyword>
+					<keyword>shareable</keyword>
+					<keyword>discardable</keyword>
+					<keyword>notpageable</keyword>
+					<keyword>linkremove</keyword>
+					<keyword>linkinfo</keyword>
+					<keyword>interpreter</keyword>
+					<keyword>dynamic</keyword>
+					<keyword>gnuehframe</keyword>
+					<keyword>gnustack</keyword>
+					<keyword>gnurelro</keyword>
 				</context>
 				<context id="commands" style-ref="preprocessor">
 					<keyword>if</keyword>
@@ -208,6 +215,7 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 					<keyword>line</keyword>
 					<keyword>clear</keyword>
 
+					<keyword>sectalign</keyword>
 					<keyword>uppercase</keyword>
 					<keyword>format</keyword>
 					<keyword>use16</keyword>
@@ -232,8 +240,13 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 					<keyword>end</keyword>
 					<keyword>break</keyword>
 
-					<keyword>display</keyword>
-					<keyword>err</keyword>
+					<keyword>struc</keyword>
+					<keyword>endstruc</keyword>
+
+					<keyword>private</keyword>
+					<keyword>public</keyword>
+					<keyword>stack</keyword>
+					<keyword>heap</keyword>
 
 					<keyword>db</keyword> <keyword>du</keyword>
 					<keyword>dw</keyword>
@@ -274,6 +287,9 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 					<keyword>yword</keyword>
 					<keyword>zword</keyword>
 
+					<keyword>istruc</keyword>
+					<keyword>iend</keyword>
+
 					<keyword>rel</keyword>
 					<keyword>abs</keyword>
 					<keyword>strict</keyword>
@@ -283,14 +299,12 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 					<keyword>seg</keyword>
 					<keyword>wrt</keyword>
 
-					<keyword>private</keyword>
-					<keyword>public</keyword>
 					<keyword>common</keyword>
-					<keyword>stack</keyword>
 					<keyword>class</keyword>
 					<keyword>overlay</keyword>
 					<keyword>absolute</keyword>
 					<keyword>align</keyword>
+					<keyword>alignb</keyword>
 					<keyword>flat</keyword>
 
 					<keyword>progbits</keyword>
@@ -317,14 +331,59 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 
 					<!-- FASM -->
 					<keyword>import</keyword>
+					<keyword>resource</keyword>
+					<keyword>fixups</keyword>
 					<keyword>format</keyword>
 					<keyword>entry</keyword>
-					<keyword>console</keyword>
+					<keyword>binary</keyword>
+					<keyword>MZ</keyword>
+
 					<keyword>PE</keyword>
 					<keyword>PE64</keyword>
+					<keyword>console</keyword>
+					<keyword>native</keyword>
+					<keyword>GUI</keyword>
+					<keyword>DLL</keyword>
+					<keyword>WDM</keyword>
+					<keyword>large</keyword>
+					<keyword>NX</keyword>
+					<keyword>rva</keyword>
+					<keyword>plt</keyword>
+
+					<keyword>EFI</keyword>
+					<keyword>EFIboot</keyword>
+					<keyword>EFIruntime</keyword>
+
+					<keyword>MS</keyword>
+					<keyword>MS64</keyword>
+					<keyword>COFF</keyword>
+
 					<keyword>ELF</keyword>
 					<keyword>ELF64</keyword>
-				
+
+					<keyword>virtual</keyword>
+					<keyword>display</keyword>
+					<keyword>defined</keyword>
+					<keyword>assert</keyword>
+					<keyword>used</keyword>
+					<keyword>err</keyword>
+					<keyword>restore</keyword>
+					<keyword>fix</keyword>
+					<keyword>forward</keyword>
+					<keyword>reverse</keyword>
+					<keyword>eqtype</keyword>
+					<keyword>match</keyword>
+					<keyword>load</keyword>
+					<keyword>store</keyword>
+					<keyword>from</keyword>
+					<keyword>at</keyword>
+					<keyword>extrn</keyword>
+
+					<keyword>rept</keyword>
+					<keyword>irp</keyword>
+					<keyword>irps</keyword>
+					<keyword>irpv</keyword>
+
 					<!-- GNU -->
 					<keyword>long</keyword>
 					<keyword>quad</keyword>
