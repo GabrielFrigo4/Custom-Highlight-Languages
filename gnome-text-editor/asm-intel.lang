@@ -11,7 +11,7 @@ https://www.felixcloutier.com/x86/
 -->
 <!-- About this highlighting file-lang
 assembler sintax: NASM, FASM, GAS
-version: 1.13
+version: 1.14
 web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-text-editor/asm-intel.lang
 -->
 <language id="assembly" name="Assembly (Intel)" version="2.0" section="Sources">
@@ -47,12 +47,6 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 					<start>/\*</start>
 					<end>\*/</end>
 				</context>
-				<!-- not necessary
-				<context id="nasm-id" style-ref="keyword">
-					<start>\[</start>
-					<end>\]</end>
-				</context>
-				-->
 				<context id="operator" style-ref="operator">
 					<match>[-.,:\+\*\/\(\)\{\}\[\]|%?\$\=]</match>
 				</context>
@@ -121,21 +115,35 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 					<keyword>xdata</keyword>
 					<keyword>data</keyword>
 
+					<keyword>lrodata</keyword>
+					<keyword>ldata</keyword>
+					<keyword>lbss</keyword>
+					<keyword>tdata</keyword>
+					<keyword>tbss</keyword>
+					<keyword>comment</keyword>
+					<keyword>init_array</keyword>
+					<keyword>fini_array</keyword>
+					<keyword>note</keyword>
+					<keyword>other</keyword>
+					
 					<!-- FASM -->
 					<keyword>readable</keyword>
 					<keyword>writeable</keyword>
 					<keyword>executable</keyword>
 				</context>
 				<context id="commands" style-ref="preprocessor">
+					<keyword>pragma</keyword>
+					<keyword>uppercase</keyword>
 					<keyword>format</keyword>
-					<keyword>as</keyword>
 					<keyword>use16</keyword>
 					<keyword>use32</keyword>
 					<keyword>use64</keyword>
+					<keyword>as</keyword>
 				
 					<keyword>org</keyword>
 					<keyword>bits</keyword>
 					<keyword>extern</keyword>
+					<keyword>export</keyword>
 					<keyword>global</keyword>
 					<keyword>section</keyword>
 					<keyword>segment</keyword>
@@ -154,7 +162,6 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 
 					<keyword>include</keyword>
 					<keyword>macro</keyword>
-					<keyword>align</keyword>
 
 					<keyword>db</keyword> <keyword>du</keyword>
 					<keyword>dw</keyword>
@@ -190,6 +197,52 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 					<keyword>qword</keyword>
 					<keyword>tword</keyword>
 
+					<!-- NASM -->
+					<keyword>oword</keyword>
+					<keyword>yword</keyword>
+					<keyword>zword</keyword>
+
+					<keyword>rel</keyword>
+					<keyword>abs</keyword>
+					<keyword>strict</keyword>
+
+					<keyword>near</keyword>
+					<keyword>far</keyword>
+					<keyword>seg</keyword>
+					<keyword>wrt</keyword>
+
+					<keyword>private</keyword>
+					<keyword>public</keyword>
+					<keyword>common</keyword>
+					<keyword>stack</keyword>
+					<keyword>class</keyword>
+					<keyword>overlay</keyword>
+					<keyword>absolute</keyword>
+					<keyword>align</keyword>
+					<keyword>flat</keyword>
+
+					<keyword>progbits</keyword>
+					<keyword>nobits</keyword>
+					<keyword>preinit_array</keyword>
+					<keyword>init_array</keyword>
+					<keyword>fini_array</keyword>
+					<keyword>note</keyword>
+
+					<keyword>alloc</keyword>
+					<keyword>noalloc</keyword>
+					<keyword>exec</keyword>
+					<keyword>noexec</keyword>
+					<keyword>write</keyword>
+					<keyword>nowrite</keyword>
+					<keyword>pointer</keyword>
+
+					<keyword>mixed</keyword>
+					<keyword>zerofill</keyword>
+					<keyword>no_dead_strip</keyword>
+					<keyword>live_support</keyword>
+					<keyword>strip_static_syms</keyword>
+					<keyword>debug</keyword>
+
 					<!-- FASM -->
 					<keyword>import</keyword>
 					<keyword>format</keyword>
@@ -199,14 +252,6 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 					<keyword>PE64</keyword>
 					<keyword>ELF</keyword>
 					<keyword>ELF64</keyword>
-
-					<!-- NASM -->
-					<keyword>rel</keyword>
-					<keyword>abs</keyword>
-					<keyword>strict</keyword>
-					<keyword>oword</keyword>
-					<keyword>yword</keyword>
-					<keyword>zword</keyword>
 				
 					<!-- GNU -->
 					<keyword>long</keyword>
@@ -216,10 +261,13 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 					<keyword>xmmword</keyword>
 					<keyword>ymmword</keyword>
 					<keyword>zmmword</keyword>
+
+					<keyword>code16</keyword>
+					<keyword>code32</keyword>
+					<keyword>code64</keyword>
 				</context>
 				<context id="instructions" style-ref="keyword">
 					<!-- Core Instructions -->
-					
 					<keyword>aaa</keyword>
 					<keyword>aad</keyword>
 					<keyword>aam</keyword>
@@ -1353,17 +1401,14 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 					<keyword>xtest</keyword>
 					
 					<!-- SGX Instructions -->
-					
 					<keyword>encls</keyword>
 					<keyword>enclu</keyword>
 					<keyword>enclv</keyword>
 					
 					<!-- SMX Instructions -->
-					
 					<keyword>getsec</keyword>
 					
 					<!-- VMX Instructions -->
-					
 					<keyword>invept</keyword>
 					<keyword>invvpid</keyword>
 					<keyword>vmcall</keyword>
@@ -1416,7 +1461,6 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 				</context>
 				<context id="registers" style-ref="type">
 					<!-- intel x86-64 -->
-
 					<keyword>rax</keyword>
 					<keyword>rbx</keyword>
 					<keyword>rcx</keyword>
@@ -1444,7 +1488,6 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 					<keyword>r15</keyword>
 
 					<!-- intel 386 -->
-
 					<keyword>eax</keyword>
 					<keyword>ebx</keyword>
 					<keyword>ecx</keyword>
@@ -1513,7 +1556,6 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 					<keyword>mm7</keyword>
 
 					<!-- AVX -->
-
 					<keyword>xmm0</keyword>
 					<keyword>xmm1</keyword>
 					<keyword>xmm2</keyword>
@@ -1524,7 +1566,6 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 					<keyword>xmm7</keyword>
 
 					<!-- AVX2 -->
-					
 					<keyword>xmm8</keyword>
 					<keyword>xmm9</keyword>
 					<keyword>xmm10</keyword>
@@ -1552,7 +1593,6 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 					<keyword>ymm15</keyword>
 					
 					<!-- AVX512 -->
-					
 					<keyword>xmm16</keyword>
 					<keyword>xmm17</keyword>
 					<keyword>xmm18</keyword>
