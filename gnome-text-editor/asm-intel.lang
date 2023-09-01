@@ -11,7 +11,7 @@ https://www.felixcloutier.com/x86/
 -->
 <!-- About this highlighting file-lang
 assembler sintax: NASM, FASM, GAS
-version: 1.17
+version: 1.18
 web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-text-editor/asm-intel.lang
 -->
 <language id="assembler" name="Assembler (Intel)" version="2.0" section="Sources">
@@ -162,6 +162,7 @@ web: https://github.com/GabrielFrigo4/Custom-Hightlight-Langs/edit/main/gnome-te
 					<!-- FASM -->
 					<keyword>readable</keyword>
 					<keyword>writeable</keyword>
+					<keyword>writable</keyword>
 					<keyword>executable</keyword>
 					<keyword>shareable</keyword>
 					<keyword>discardable</keyword>
