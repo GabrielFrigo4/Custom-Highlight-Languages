@@ -86,10 +86,10 @@ def BarToSpace(_data):
 
 print('Custom-Highlight-Langs Tools')
 print('keywordOnly[0] | keywordStyle[1] | uppercase[2] | lowercase[3] | spaceToLine[4] | lineToSpace[5] | spaceToBar[6] | barToSpace[7]')
-ops = input('Options: ')
+opts = input('Options: ')
 data = GetInputs('\n[DATA]:\n')
 
-for op in ops.split(','):
+for op in opts.split(','):
     if op == '0':
         data = KeyWordOnly(data)
     elif op == '1':
