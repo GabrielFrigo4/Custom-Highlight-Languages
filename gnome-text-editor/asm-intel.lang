@@ -179,6 +179,7 @@ version: 2.5
 					<keyword>bits</keyword>
 					<keyword>extern</keyword>
 					<keyword>export</keyword>
+					<keyword>import</keyword>
 					<keyword>global</keyword>
 					<keyword>section</keyword>
 					<keyword>segment</keyword>
@@ -282,7 +283,6 @@ version: 2.5
 					<keyword>debug</keyword>
 
 					<!-- FASM -->
-					<keyword>import</keyword>
 					<keyword>resource</keyword>
 					<keyword>fixups</keyword>
 					<keyword>format</keyword>
