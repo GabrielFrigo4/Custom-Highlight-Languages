@@ -80,7 +80,7 @@ version: 2.5
 					<match>\b0[0-9a-fA-F][Hh]\b</match>
 				</context>
 				<context id="macros-nasm-assembler" style-ref="macro">
-					<match>(?-i)(^|$|[ \t]|)+\b(__)\?(NASM_MAJOR|NASM_MINOR|NASM_SUBMINOR|NASM_PATCHLEVEL|NASM_SNAPSHOT|NASM_VERSION_ID|NASM_VER|FILE|LINE|BITS|OUTPUT_FORMAT|DEBUG_FORMAT|DATE|TIME|DATE_NUM|TIME_NUM|UTC_DATE|UTC_TIME|UTC_DATE_NUM|UTC_TIME_NUM|POSIX_TIME|PASS)\?(__)+\b(^|$|[ \t]|)</match>
+					<match>(?-i)(^|$|[ \t]|)+\b(__)\?(NASM_MAJOR|NASM_MINOR|NASM_SUBMINOR|NASM_PATCHLEVEL|NASM_SNAPSHOT|NASM_VERSION_ID|NASM_VER|FILE|LINE|BITS|OUTPUT_FORMAT|DEBUG_FORMAT|DATE|TIME|DATE_NUM|TIME_NUM|UTC_DATE|UTC_TIME|UTC_DATE_NUM|UTC_TIME_NUM|POSIX_TIME|PASS|SECT)\?(__)+\b(^|$|[ \t]|)</match>
 				</context>
 				<context id="macros-nasm-float" style-ref="macro">
 					<match>(?-i)(^|$|[ \t]|)+\b(__)\?(Infinity|QNaN|SNaN|float8|float16|bfloat16|float32|float64|float80m|float80e|float128l|float128h)\?(__)+\b(^|$|[ \t]|)</match>
