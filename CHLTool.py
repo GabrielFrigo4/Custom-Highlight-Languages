@@ -119,7 +119,7 @@ def nameof(function):
 
 def getOptionChunk(functionDataList, index):
     functionName = nameof(functionDataList[index])
-    if len(functionDataList) == index - 1:
+    if len(functionDataList) == index + 1:
         return f'{functionName}[{index}]'
     else:
         return f'{functionName}[{index}] | '
