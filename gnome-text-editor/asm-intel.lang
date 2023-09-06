@@ -12,7 +12,7 @@ https://www.felixcloutier.com/x86/
 <!-- About this Highlighting File-Lang
 web: https://github.com/GabrielFrigo4/Custom-Highlight-Languages/blob/main/gnome-text-editor/asm-intel.lang
 assembler sintax: NASM, FASM, GAS
-version: 2.4
+version: 2.5
 -->
 <language id="assembler" name="Assembler (Intel)" version="2.0" section="Sources">
 	<metadata>
@@ -1542,44 +1542,7 @@ version: 2.4
 					<keyword>vscatterpf1qps</keyword>
 				</context>
 				<context id="registers" style-ref="type">
-					<!-- intel x86-64 -->
-					<keyword>rax</keyword>
-					<keyword>rbx</keyword>
-					<keyword>rcx</keyword>
-					<keyword>rdx</keyword>
-					<keyword>rsi</keyword>
-					<keyword>rdi</keyword>
-					<keyword>rsp</keyword>
-					<keyword>rbp</keyword>
-
-					<!-- intel 386 -->
-					<keyword>eax</keyword>
-					<keyword>ebx</keyword>
-					<keyword>ecx</keyword>
-					<keyword>edx</keyword>
-					<keyword>esi</keyword>
-					<keyword>edi</keyword>
-					<keyword>esp</keyword>
-					<keyword>ebp</keyword>
-
-					<keyword>ax</keyword>
-					<keyword>bx</keyword>
-					<keyword>cx</keyword>
-					<keyword>dx</keyword>
-					<keyword>di</keyword>
-					<keyword>si</keyword>
-					<keyword>bp</keyword>
-					<keyword>sp</keyword>
-
-					<keyword>al</keyword>
-					<keyword>ah</keyword>
-					<keyword>bh</keyword>
-					<keyword>bl</keyword>
-					<keyword>ch</keyword>
-					<keyword>cl</keyword>
-					<keyword>dh</keyword>
-					<keyword>dl</keyword>
-
+					<!-- intel segment -->
 					<keyword>cs</keyword>
 					<keyword>ds</keyword>
 					<keyword>ss</keyword>
@@ -1590,7 +1553,13 @@ version: 2.4
 					<!-- intel x87 -->
 					<keyword>st</keyword>
 				</context>
-				<context id="registers-general" style-ref="type">
+				<context id="registers-general-byte" style-ref="type">
+					<match>\b(?i)(a|b|c|d)(l|h)(?-i)\b</match>
+				</context>
+				<context id="registers-general-old" style-ref="type">
+					<match>\b(?i)(r|e|)(ax|bx|cx|dx|si|di|sp|bp)(?-i)\b</match>
+				</context>
+				<context id="registers-general-new" style-ref="type">
 					<match>\b(?i)r([0-9]|1[0-5])(|d|w|b)(?-i)\b</match>
 				</context>
 				<context id="registers-control" style-ref="type">
