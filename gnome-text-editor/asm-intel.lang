@@ -12,7 +12,7 @@ https://www.felixcloutier.com/x86/
 <!-- About this Highlighting File-Lang
 web: https://github.com/GabrielFrigo4/Custom-Highlight-Languages/blob/main/gnome-text-editor/asm-intel.lang
 assembler sintax: NASM, FASM, GAS
-version: 2.5
+version: 2.6
 -->
 <language id="assembler" name="Assembler (Intel)" version="2.0" section="Sources">
 	<metadata>
@@ -195,7 +195,9 @@ version: 2.5
 
 					<keyword>struc</keyword>
 					<keyword>endstruc</keyword>
-
+					<keyword>struct</keyword>
+					<keyword>endstruct</keyword>
+							
 					<keyword>private</keyword>
 					<keyword>public</keyword>
 					<keyword>stack</keyword>
@@ -336,14 +338,36 @@ version: 2.5
 					<keyword>irps</keyword>
 					<keyword>irpv</keyword>
 
-					<!-- GNU -->
+					<!-- GAS -->
+					<keyword>short</keyword>
+					<keyword>hword</keyword>
 					<keyword>long</keyword>
+					<keyword>int</keyword>
 					<keyword>quad</keyword>
+
+					<keyword>float</keyword>
+					<keyword>single</keyword>
+					<keyword>double</keyword>
+					
 					<keyword>ascii</keyword>
+					<keyword>string</keyword>
+					<keyword>string8</keyword>
 					<keyword>asciz</keyword>
+					<keyword>string16</keyword>
+					<keyword>string32</keyword>
+					<keyword>string64</keyword>
+
 					<keyword>xmmword</keyword>
 					<keyword>ymmword</keyword>
 					<keyword>zmmword</keyword>
+
+					<keyword>intel_syntax</keyword>
+					<keyword>noprefix</keyword>
+					<keyword>ptr</keyword>
+					<keyword>file</keyword>
+					<keyword>def</keyword>
+					<keyword>globl</keyword>
+					<keyword>space</keyword>
 
 					<keyword>code16</keyword>
 					<keyword>code32</keyword>
