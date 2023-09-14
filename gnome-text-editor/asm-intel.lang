@@ -12,7 +12,7 @@ https://www.felixcloutier.com/x86/
 <!-- About this Highlighting File-Lang
 web: https://github.com/GabrielFrigo4/Custom-Highlight-Languages/blob/main/gnome-text-editor/asm-intel.lang
 assembler sintax: NASM, FASM, GAS
-version: 2.6
+version: 2.7
 -->
 <language id="assembler" name="Assembler (Intel)" version="2.0" section="Sources">
 	<metadata>
@@ -454,7 +454,36 @@ version: 2.6
 					<keyword>clui</keyword>
 					<keyword>clwb</keyword>
 					<keyword>cmc</keyword>
-					<keyword>cmovcc</keyword>
+					<keyword>cmova</keyword>
+					<keyword>cmovae</keyword>
+					<keyword>cmovb</keyword>
+					<keyword>cmovbe</keyword>
+					<keyword>cmovc</keyword>
+					<keyword>cmove</keyword>
+					<keyword>cmovg</keyword>
+					<keyword>cmovge</keyword>
+					<keyword>cmovl</keyword>
+					<keyword>cmovle</keyword>
+					<keyword>cmovna</keyword>
+					<keyword>cmovnae</keyword>
+					<keyword>cmovnb</keyword>
+					<keyword>cmovnbe</keyword>
+					<keyword>cmovnc</keyword>
+					<keyword>cmovne</keyword>
+					<keyword>cmovng</keyword>
+					<keyword>cmovnge</keyword>
+					<keyword>cmovnl</keyword>
+					<keyword>cmovnle</keyword>
+					<keyword>cmovno</keyword>
+					<keyword>cmovnp</keyword>
+					<keyword>cmovns</keyword>
+					<keyword>cmovnz</keyword>
+					<keyword>cmovo</keyword>
+					<keyword>cmovp</keyword>
+					<keyword>cmovpe</keyword>
+					<keyword>cmovpo</keyword>
+					<keyword>cmovs</keyword>
+					<keyword>cmovz</keyword>
 					<keyword>cmp</keyword>
 					<keyword>cmppd</keyword>
 					<keyword>cmpps</keyword>
@@ -642,7 +671,39 @@ version: 2.6
 					<keyword>iretd</keyword>
 					<keyword>iretq</keyword>
 					<keyword>jmp</keyword>
-					<keyword>jcc</keyword>
+					<keyword>ja</keyword>
+					<keyword>jae</keyword>
+					<keyword>jb</keyword>
+					<keyword>jbe</keyword>
+					<keyword>jc</keyword>
+					<keyword>jcxz</keyword>
+					<keyword>jecxz</keyword>
+					<keyword>jrcxz</keyword>
+					<keyword>je</keyword>
+					<keyword>jg</keyword>
+					<keyword>jge</keyword>
+					<keyword>jl</keyword>
+					<keyword>jle</keyword>
+					<keyword>jna</keyword>
+					<keyword>jnae</keyword>
+					<keyword>jnb</keyword>
+					<keyword>jnbe</keyword>
+					<keyword>jnc</keyword>
+					<keyword>jne</keyword>
+					<keyword>jng</keyword>
+					<keyword>jnge</keyword>
+					<keyword>jnl</keyword>
+					<keyword>jnle</keyword>
+					<keyword>jno</keyword>
+					<keyword>jnp</keyword>
+					<keyword>jns</keyword>
+					<keyword>jnz</keyword>
+					<keyword>jo</keyword>
+					<keyword>jp</keyword>
+					<keyword>jpe</keyword>
+					<keyword>jpo</keyword>
+					<keyword>js</keyword>
+					<keyword>jz</keyword>
 					<keyword>kaddb</keyword>
 					<keyword>kaddd</keyword>
 					<keyword>kaddq</keyword>
@@ -718,7 +779,8 @@ version: 2.6
 					<keyword>lodsq</keyword>
 					<keyword>lodsw</keyword>
 					<keyword>loop</keyword>
-					<keyword>loopcc</keyword>
+					<keyword>loope</keyword>
+					<keyword>loopne</keyword>
 					<keyword>lsl</keyword>
 					<keyword>lss</keyword>
 					<keyword>ltr</keyword>
@@ -983,7 +1045,36 @@ version: 2.6
 					<keyword>senduipi</keyword>
 					<keyword>serialize</keyword>
 					<keyword>setssbsy</keyword>
-					<keyword>setcc</keyword>
+					<keyword>seta</keyword>
+					<keyword>setae</keyword>
+					<keyword>setb</keyword>
+					<keyword>setbe</keyword>
+					<keyword>setc</keyword>
+					<keyword>sete</keyword>
+					<keyword>setg</keyword>
+					<keyword>setge</keyword>
+					<keyword>setl</keyword>
+					<keyword>setle</keyword>
+					<keyword>setna</keyword>
+					<keyword>setnae</keyword>
+					<keyword>setnb</keyword>
+					<keyword>setnbe</keyword>
+					<keyword>setnc</keyword>
+					<keyword>setne</keyword>
+					<keyword>setng</keyword>
+					<keyword>setnge</keyword>
+					<keyword>setnl</keyword>
+					<keyword>setnle</keyword>
+					<keyword>setno</keyword>
+					<keyword>setnp</keyword>
+					<keyword>setns</keyword>
+					<keyword>setnz</keyword>
+					<keyword>seto</keyword>
+					<keyword>setp</keyword>
+					<keyword>setpe</keyword>
+					<keyword>setpo</keyword>
+					<keyword>sets</keyword>
+					<keyword>setz</keyword>
 					<keyword>sfence</keyword>
 					<keyword>sgdt</keyword>
 					<keyword>sha1msg1</keyword>
