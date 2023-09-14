@@ -294,6 +294,8 @@ version: 2.6
 					<keyword>binary</keyword>
 					<keyword>MZ</keyword>
 
+					<keyword>ccall</keyword>
+					<keyword>stdcall</keyword>
 					<keyword>PE</keyword>
 					<keyword>PE64</keyword>
 					<keyword>console</keyword>
