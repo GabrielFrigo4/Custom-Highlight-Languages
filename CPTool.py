@@ -53,19 +53,8 @@ SCRIPT_NAME = 'Custom-Pattern Tools'
 OPTIONS = 'Options: '
 INPUT = '\n[DATA]:\n'
 RESULT = '[RESULT]:\n'
-EXIT = 'press \'enter\' to exit'
-functionDataList = [
-    KeyWordOnly,
-    KeyWordStyle,
-    Upper,
-    Lower,
-    SpaceToLine,
-    LineToSpace,
-    SpaceToBar,
-    BarToSpace,
-    SpaceToComma,
-    CommaToSpace
-]
+EXIT = '\npress \'enter\' to exit'
+functionDataList = []
 
 
 print(SCRIPT_NAME)
