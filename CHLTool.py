@@ -1,4 +1,12 @@
 #[================================================================================================]
+# IMPORT
+#[================================================================================================]
+
+
+import re
+
+
+#[================================================================================================]
 # FUNCTIONS DATA
 #[================================================================================================]
 
@@ -24,8 +32,10 @@ def KeyWordOnly(_data):
     _line_dada = _data.split('\n')
     _ret_data = ''
     for _local_data in _line_dada:
-        _loc_str = _local_data.split()[0]
-        _ret_data += f'{_loc_str}\n'
+        _local_data = _local_data.strip(' \t\n,/|')
+        _local_str = _local_data.split()[0]
+        _ret_data += f'{_local_str}\n'
+    _ret_data = _ret_data.strip('\n')
     return _ret_data
 
 
@@ -36,8 +46,30 @@ def KeyWordStyle(_data):
     _line_dada = _data.split('\n')
     _ret_data = ''
     for _local_data in _line_dada:
-        _loc_str = _local_data.split()[0]
-        _ret_data += f'<keyword>{_loc_str}</keyword>\n'
+        _local_data = _local_data.strip(' \t\n,/|')
+        _local_str = _local_data.split()[0]
+        _ret_data += f'<keyword>{_local_str}</keyword>\n'
+    _ret_data = _ret_data.strip('\n')
+    return _ret_data
+
+
+def RemoveDuplicates(_data):
+    if _data == '':
+        print('\'data\' is empty')
+        return
+    _list_data = re.split(' |,|\n|\|', _data)
+    if len(_list_data[0]) == len(_data):
+        print('\'data\' is only one word')
+        return
+    _split_mode = _data[len(_list_data[0])]
+    _use_list = []
+    _ret_data = ''
+    for _local_data in _list_data:
+        _local_data = _local_data.strip(' \t\n,/|')
+        if not (_local_data in _use_list):
+            _use_list.append(_local_data)
+            _ret_data += f'{_local_data}{_split_mode}'
+    _ret_data = _ret_data.strip('\n')
     return _ret_data
 
 
@@ -45,7 +77,7 @@ def Upper(_data):
     if _data == '':
         print('\'data\' is empty')
         return
-    _data = _data.upper().strip()
+    _data = _data.upper()#.strip()
     return _data
 
 
@@ -53,7 +85,7 @@ def Lower(_data):
     if _data == '':
         print('\'data\' is empty')
         return
-    _data = _data.lower().strip()
+    _data = _data.lower()#.strip()
     return _data
 
 
@@ -61,7 +93,7 @@ def SpaceToLine(_data):
     if _data == '':
         print('\'data\' is empty')
         return
-    _data = _data.replace(" ", "\n").strip("\n")
+    _data = _data.replace(" ", "\n")#.strip("\n")
     return _data
 
 
@@ -69,7 +101,7 @@ def LineToSpace(_data):
     if _data == '':
         print('\'data\' is empty')
         return
-    _data = _data.replace("\n", " ").strip(" ")
+    _data = _data.replace("\n", " ")#.strip(" ")
     return _data
 
 
@@ -85,7 +117,7 @@ def BarToSpace(_data):
     if _data == '':
         print('\'data\' is empty')
         return
-    _data = _data.replace("|", " ").strip(" ")
+    _data = _data.replace("|", " ")#.strip(" ")
     return _data
 
 
@@ -93,7 +125,7 @@ def SpaceToComma(_data):
     if _data == '':
         print('\'data\' is empty')
         return
-    _data = _data.replace(" ", ",").strip(",")
+    _data = _data.replace(" ", ",")#.strip(",")
     return _data
 
 
@@ -101,7 +133,7 @@ def CommaToSpace(_data):
     if _data == '':
         print('\'data\' is empty')
         return
-    _data = _data.replace(",", " ").strip(" ")
+    _data = _data.replace(",", " ")#.strip(" ")
     return _data
 
 
@@ -141,10 +173,11 @@ SCRIPT_NAME = 'Custom-Highlight-Langs Tools'
 OPTIONS = 'Options: '
 INPUT = '\n[DATA]:\n'
 RESULT = '[RESULT]:\n'
-EXIT = 'press \'enter\' to exit'
+EXIT = '\npress \'enter\' to exit'
 functionDataList = [
     KeyWordOnly,
     KeyWordStyle,
+    RemoveDuplicates,
     Upper,
     Lower,
     SpaceToLine,
