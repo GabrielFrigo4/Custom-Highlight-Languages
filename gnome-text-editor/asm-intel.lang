@@ -285,6 +285,7 @@ version: 2.6
 					<keyword>debug</keyword>
 
 					<!-- FASM -->
+					<keyword>restruc</keyword>
 					<keyword>resource</keyword>
 					<keyword>fixups</keyword>
 					<keyword>format</keyword>
