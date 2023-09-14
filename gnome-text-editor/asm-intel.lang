@@ -522,7 +522,14 @@ version: 2.6
 					<keyword>fbstp</keyword>
 					<keyword>fchs</keyword>
 					<keyword>fclex</keyword>
-					<keyword>fcmovcc</keyword>
+					<keyword>fcmovb</keyword>
+					<keyword>fcmove</keyword>
+					<keyword>fcmovbe</keyword>
+					<keyword>fcmovu</keyword>
+					<keyword>fcmovnb</keyword>
+					<keyword>fcmovne</keyword>
+					<keyword>fcmovnbe</keyword>
+					<keyword>fcmovnu</keyword>
 					<keyword>fcom</keyword>
 					<keyword>fcomi</keyword>
 					<keyword>fcomip</keyword>
