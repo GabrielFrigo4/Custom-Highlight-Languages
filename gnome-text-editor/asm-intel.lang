@@ -180,6 +180,7 @@ version: 2.6
 					<keyword>extern</keyword>
 					<keyword>export</keyword>
 					<keyword>import</keyword>
+					<keyword>library</keyword>
 					<keyword>global</keyword>
 					<keyword>section</keyword>
 					<keyword>segment</keyword>
