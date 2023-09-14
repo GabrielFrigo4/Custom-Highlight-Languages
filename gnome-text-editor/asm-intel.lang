@@ -198,6 +198,7 @@ version: 2.7
 					<keyword>endstruc</keyword>
 					<keyword>struct</keyword>
 					<keyword>endstruct</keyword>
+					<keyword>ends</keyword>
 							
 					<keyword>private</keyword>
 					<keyword>public</keyword>
