@@ -395,6 +395,10 @@ version: 3.0
 					<keyword>ymmword</keyword>
 					<keyword>zmmword</keyword>
 
+					<keyword>set</keyword>
+					<keyword>exitm</keyword>
+					<keyword>endm</keyword>
+
 					<keyword>intel_syntax</keyword>
 					<keyword>noprefix</keyword>
 					<keyword>ptr</keyword>
