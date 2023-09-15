@@ -32,7 +32,7 @@ def KeyWordOnly(_data):
     _line_dada = _data.split('\n')
     _ret_data = ''
     for _local_data in _line_dada:
-        _local_data = _local_data.strip(' \t\n,/|')
+        _local_data = _local_data.strip(' \t\n,|')
         _local_str = _local_data.split()[0]
         _ret_data += f'{_local_str}\n'
     _ret_data = _ret_data.strip('\n')
@@ -46,7 +46,7 @@ def KeyWordStyle(_data):
     _line_dada = _data.split('\n')
     _ret_data = ''
     for _local_data in _line_dada:
-        _local_data = _local_data.strip(' \t\n,/|')
+        _local_data = _local_data.strip(' \t\n,|')
         _local_str = _local_data.split()[0]
         _ret_data += f'<keyword>{_local_str}</keyword>\n'
     _ret_data = _ret_data.strip('\n')
@@ -57,7 +57,7 @@ def RemoveDuplicates(_data):
     if _data == '':
         print('\'data\' is empty')
         return
-    _list_data = re.split(' |,|\n|\|', _data)
+    _list_data = re.split(' |,|\n|\\|', _data)
     if len(_list_data[0]) == len(_data):
         print('\'data\' is only one word')
         return
@@ -65,7 +65,7 @@ def RemoveDuplicates(_data):
     _use_list = []
     _ret_data = ''
     for _local_data in _list_data:
-        _local_data = _local_data.strip(' \t\n,/|')
+        _local_data = _local_data.strip(' \t\n,|')
         if not (_local_data in _use_list):
             _use_list.append(_local_data)
             _ret_data += f'{_local_data}{_split_mode}'
