@@ -406,25 +406,25 @@ version: 3.0
 					<keyword>data</keyword>
 					<keyword>weak</keyword>
 
-					<keyword>PENTIUM</keyword>
-					<keyword>PPRO</keyword>
-					<keyword>P2</keyword>
-					<keyword>P3</keyword>
-					<keyword>KATMAI</keyword>
-					<keyword>P4</keyword>
-					<keyword>WILLAMETTE</keyword>
-					<keyword>PRESCOTT</keyword>
-					<keyword>X64</keyword>
-					<keyword>IA64</keyword>
-					<keyword>ALL</keyword>
+					<keyword>pentium</keyword>
+					<keyword>ppro</keyword>
+					<keyword>p2</keyword>
+					<keyword>p3</keyword>
+					<keyword>katmai</keyword>
+					<keyword>p4</keyword>
+					<keyword>willamette</keyword>
+					<keyword>prescott</keyword>
+					<keyword>x64</keyword>
+					<keyword>ia64</keyword>
+					<keyword>all</keyword>
 
-					<keyword>DAZ</keyword>
-					<keyword>NODAZ</keyword>
-					<keyword>NEAR</keyword>
-					<keyword>UP</keyword>
-					<keyword>DOWN</keyword>
-					<keyword>ZERO</keyword>
-					<keyword>DEFAULT</keyword>
+					<keyword>daz</keyword>
+					<keyword>nodaz</keyword>
+					<keyword>near</keyword>
+					<keyword>up</keyword>
+					<keyword>down</keyword>
+					<keyword>zero</keyword>
+					<keyword>default</keyword>
 				</context>
 				<context id="instructions" style-ref="keyword">
 					<!-- Core Instructions -->
