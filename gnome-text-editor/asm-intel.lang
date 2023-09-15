@@ -12,7 +12,7 @@ https://www.felixcloutier.com/x86/
 <!-- About this Highlighting File-Lang
 web: https://github.com/GabrielFrigo4/Custom-Highlight-Languages/blob/main/gnome-text-editor/asm-intel.lang
 assembler sintax: NASM, FASM, GAS
-version: 2.7
+version: 3.0
 -->
 <language id="assembler" name="Assembler (Intel)" version="2.0" section="Sources">
 	<metadata>
@@ -50,10 +50,23 @@ version: 2.7
 				<context id="operator" style-ref="operator">
 					<match>[-.,:\+\*\/\(\)\{\}\[\]|%?\$\=]</match>
 				</context>
+				<define-regex id="escaped-character" extended="true">
+				  \\(					# leading backslash
+				  [\\\"\'\`nrbtfav\?] |			# escaped character
+				  [0-7]{1,3} |				# one, two, or three octal digits
+				  x[0-9A-Fa-f]+				# 'x' followed by hex digits
+				  )
+				</define-regex>
 				<context id="string" style-ref="string">
-					<start>&quot;|\`</start>
-					<end>&quot;|\`</end>
+					<start>\`|&quot;|\'</start>
+					<end>\`|&quot;|\'</end>
+					<include>
+						<context id="escape" style-ref="escaped-character">
+							<match>\%{escaped-character}</match>
+						</context>
+					</include>
 				</context>
+				<!-- CHAR IS STRING WITH LEN = 1
 				<context id="char" style-ref="character">
 					<start>\'</start>
 					<end>\'</end>
@@ -61,12 +74,18 @@ version: 2.7
 				<context id="escape" style-ref="escaped-character">
 					<match>\\.</match>
 				</context>
+				-->
+				<context id="label" style-ref="preprocessor">
+					<match>[\.(\w+)]+:</match>
+				</context>
+				<!-- OLD LABEL
 				<context id="label" style-ref="preprocessor">
 					<match>^[A-Za-z_][A-Za-z_0-9]*\:</match>
 				</context>
 				<context id="local-label" style-ref="preprocessor">
 					<match>.[A-Za-z_0-9]*\:</match>
 				</context>
+				-->
 				<context id="decimal" style-ref="decimal">
 					<match>\b([1-9][0-9]*|0)([Uu]([Ll]|LL|ll)?|([Ll]|LL|ll)[Uu]?)?\b</match>
 				</context>
@@ -108,7 +127,8 @@ version: 2.7
 					<keyword>fini_array</keyword>
 					<keyword>note</keyword>
 					<keyword>other</keyword>
-					
+				</context>
+				<context id="sections-fasm" style-ref="section">
 					<!-- FASM -->
 					<keyword>readable</keyword>
 					<keyword>writeable</keyword>
@@ -174,10 +194,11 @@ version: 2.7
 					<keyword>use32</keyword>
 					<keyword>use64</keyword>
 					<keyword>as</keyword>
-				
+
 					<keyword>org</keyword>
 					<keyword>bits</keyword>
 					<keyword>extern</keyword>
+					<keyword>required</keyword>
 					<keyword>export</keyword>
 					<keyword>import</keyword>
 					<keyword>library</keyword>
@@ -199,6 +220,7 @@ version: 2.7
 					<keyword>struct</keyword>
 					<keyword>endstruct</keyword>
 					<keyword>ends</keyword>
+					<keyword>at</keyword>
 							
 					<keyword>private</keyword>
 					<keyword>public</keyword>
@@ -238,7 +260,8 @@ version: 2.7
 					<keyword>dword</keyword>
 					<keyword>qword</keyword>
 					<keyword>tword</keyword>
-
+				</context>
+				<context id="commands-nasm" style-ref="preprocessor">
 					<!-- NASM -->
 					<keyword>oword</keyword>
 					<keyword>yword</keyword>
@@ -246,6 +269,9 @@ version: 2.7
 
 					<keyword>istruc</keyword>
 					<keyword>iend</keyword>
+
+					<keyword>float</keyword>
+					<keyword>cpu</keyword>
 
 					<keyword>rel</keyword>
 					<keyword>abs</keyword>
@@ -285,7 +311,8 @@ version: 2.7
 					<keyword>live_support</keyword>
 					<keyword>strip_static_syms</keyword>
 					<keyword>debug</keyword>
-
+				</context>
+				<context id="commands-fasm" style-ref="preprocessor">
 					<!-- FASM -->
 					<keyword>restruc</keyword>
 					<keyword>resource</keyword>
@@ -335,15 +362,16 @@ version: 2.7
 					<keyword>load</keyword>
 					<keyword>store</keyword>
 					<keyword>from</keyword>
-					<keyword>at</keyword>
 					<keyword>extrn</keyword>
 
 					<keyword>rept</keyword>
 					<keyword>irp</keyword>
 					<keyword>irps</keyword>
 					<keyword>irpv</keyword>
-
+				</context>
+				<context id="commands-gas" style-ref="preprocessor">
 					<!-- GAS -->
+					<keyword>byte</keyword>
 					<keyword>short</keyword>
 					<keyword>hword</keyword>
 					<keyword>long</keyword>
@@ -377,6 +405,32 @@ version: 2.7
 					<keyword>code16</keyword>
 					<keyword>code32</keyword>
 					<keyword>code64</keyword>
+				</context>
+				<context id="commands-options-nasm" style-ref="keyword">
+					<!-- NASM -->
+					<keyword>function</keyword>
+					<keyword>data</keyword>
+					<keyword>weak</keyword>
+
+					<keyword>PENTIUM</keyword>
+					<keyword>PPRO</keyword>
+					<keyword>P2</keyword>
+					<keyword>P3</keyword>
+					<keyword>KATMAI</keyword>
+					<keyword>P4</keyword>
+					<keyword>WILLAMETTE</keyword>
+					<keyword>PRESCOTT</keyword>
+					<keyword>X64</keyword>
+					<keyword>IA64</keyword>
+					<keyword>ALL</keyword>
+
+					<keyword>DAZ</keyword>
+					<keyword>NODAZ</keyword>
+					<keyword>NEAR</keyword>
+					<keyword>UP</keyword>
+					<keyword>DOWN</keyword>
+					<keyword>ZERO</keyword>
+					<keyword>DEFAULT</keyword>
 				</context>
 				<context id="instructions" style-ref="keyword">
 					<!-- Core Instructions -->
@@ -490,7 +544,6 @@ version: 2.7
 					<keyword>cmpps</keyword>
 					<keyword>cmps</keyword>
 					<keyword>cmpsb</keyword>
-					<keyword>cmpsd</keyword>
 					<keyword>cmpsd</keyword>
 					<keyword>cmpsq</keyword>
 					<keyword>cmpss</keyword>
@@ -799,8 +852,6 @@ version: 2.7
 					<keyword>minss</keyword>
 					<keyword>monitor</keyword>
 					<keyword>mov</keyword>
-					<keyword>mov</keyword>
-					<keyword>mov</keyword>
 					<keyword>movapd</keyword>
 					<keyword>movaps</keyword>
 					<keyword>movbe</keyword>
@@ -826,11 +877,9 @@ version: 2.7
 					<keyword>movntps</keyword>
 					<keyword>movntq</keyword>
 					<keyword>movq</keyword>
-					<keyword>movq</keyword>
 					<keyword>movq2dq</keyword>
 					<keyword>movs</keyword>
 					<keyword>movsb</keyword>
-					<keyword>movsd</keyword>
 					<keyword>movsd</keyword>
 					<keyword>movshdup</keyword>
 					<keyword>movsldup</keyword>
@@ -1347,12 +1396,8 @@ version: 2.7
 					<keyword>vfpclasssh</keyword>
 					<keyword>vfpclassss</keyword>
 					<keyword>vgatherdpd</keyword>
-					<keyword>vgatherdpd</keyword>
-					<keyword>vgatherdps</keyword>
 					<keyword>vgatherdps</keyword>
 					<keyword>vgatherqpd</keyword>
-					<keyword>vgatherqpd</keyword>
-					<keyword>vgatherqps</keyword>
 					<keyword>vgatherqps</keyword>
 					<keyword>vgetexppd</keyword>
 					<keyword>vgetexpph</keyword>
@@ -1448,12 +1493,8 @@ version: 2.7
 					<keyword>vpexpandq</keyword>
 					<keyword>vpexpandw</keyword>
 					<keyword>vpgatherdd</keyword>
-					<keyword>vpgatherdd</keyword>
-					<keyword>vpgatherdq</keyword>
 					<keyword>vpgatherdq</keyword>
 					<keyword>vpgatherqd</keyword>
-					<keyword>vpgatherqd</keyword>
-					<keyword>vpgatherqq</keyword>
 					<keyword>vpgatherqq</keyword>
 					<keyword>vplzcntd</keyword>
 					<keyword>vplzcntq</keyword>
@@ -1680,14 +1721,14 @@ version: 2.7
 					<!-- intel x87 -->
 					<keyword>st</keyword>
 				</context>
-				<context id="registers-general-byte" style-ref="type">
-					<match>\b(?i)(a|b|c|d)(l|h)(?-i)\b</match>
-				</context>
-				<context id="registers-general-old" style-ref="type">
-					<match>\b(?i)(r|e|)(ax|bx|cx|dx|si|di|sp|bp)(?-i)\b</match>
-				</context>
 				<context id="registers-general-new" style-ref="type">
 					<match>\b(?i)r([0-9]|1[0-5])(|d|w|b)(?-i)\b</match>
+				</context>
+				<context id="registers-general-old" style-ref="type">
+					<match>\b(?i)(r|e|)(ax|bx|cx|dx|si|di|sp|bp|ip)(?-i)\b</match>
+				</context>
+				<context id="registers-general-old-byte" style-ref="type">
+					<match>\b(?i)(a|b|c|d)(l|h)(?-i)\b</match>
 				</context>
 				<context id="registers-control" style-ref="type">
 					<match>\b(?i)cr([0-9]|1[0-5])(?-i)\b</match>
