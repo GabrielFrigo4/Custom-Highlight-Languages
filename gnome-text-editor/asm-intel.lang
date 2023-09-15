@@ -308,6 +308,7 @@ version: 3.0
 				</context>
 				<context id="commands-fasm" style-ref="preprocessor">
 					<!-- FASM -->
+					<keyword>union</keyword>
 					<keyword>restruc</keyword>
 					<keyword>resource</keyword>
 					<keyword>fixups</keyword>
@@ -316,8 +317,13 @@ version: 3.0
 					<keyword>binary</keyword>
 					<keyword>MZ</keyword>
 
-					<keyword>ccall</keyword>
 					<keyword>stdcall</keyword>
+					<keyword>ccall</keyword>
+					<keyword>comcall</keyword>
+					<keyword>invoke</keyword>
+					<keyword>cinvoke</keyword>
+					<keyword>cominvk</keyword>
+
 					<keyword>PE</keyword>
 					<keyword>PE64</keyword>
 					<keyword>console</keyword>
