@@ -317,6 +317,7 @@ version: 3.0
 					<keyword>binary</keyword>
 					<keyword>MZ</keyword>
 
+					<keyword>fastcall</keyword>
 					<keyword>stdcall</keyword>
 					<keyword>ccall</keyword>
 					<keyword>comcall</keyword>
