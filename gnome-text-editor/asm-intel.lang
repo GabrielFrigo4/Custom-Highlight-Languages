@@ -221,9 +221,12 @@ version: 3.0
 					<keyword>stack</keyword>
 					<keyword>heap</keyword>
 
-					<keyword>db</keyword> <keyword>du</keyword>
+					<keyword>db</keyword>
 					<keyword>dw</keyword>
+					<keyword>du</keyword>
 					<keyword>dd</keyword>
+					<keyword>dp</keyword>
+					<keyword>df</keyword>
 					<keyword>dq</keyword>
 					<keyword>dt</keyword>
 					<keyword>ddq</keyword>
@@ -234,7 +237,11 @@ version: 3.0
 					<keyword>rb</keyword>
 					<keyword>rw</keyword>
 					<keyword>rd</keyword>
+					<keyword>rp</keyword>
+					<keyword>rf</keyword>
 					<keyword>rq</keyword>
+					<keyword>rt</keyword>
+
 					<keyword>short</keyword>
 					<keyword>near</keyword>
 					<keyword>far</keyword>
