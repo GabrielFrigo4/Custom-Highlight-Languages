@@ -12,7 +12,7 @@ https://www.felixcloutier.com/x86/
 <!-- About this Highlighting File-Lang
 web: https://github.com/GabrielFrigo4/Custom-Highlight-Languages/blob/main/gnome-text-editor/asm-intel.lang
 assembler sintax: NASM, FASM, GAS
-version: 3.0
+version: 3.1
 -->
 <language id="assembler" name="Assembler (Intel)" version="2.0" section="Sources">
 	<metadata>
@@ -91,6 +91,15 @@ version: 3.0
 				</context>
 				<context id="hex2" style-ref="decimal">
 					<match>\b0[0-9a-fA-F][Hh]\b</match>
+				</context>
+				<context id="equal-def" style-ref="preprocessor">
+					<match>(\w+)+(^|$|[ \t]|)+(?=equ|\=)+(^|$|[ \t]|)</match>
+				</context>
+				<context id="macros-def" style-ref="preprocessor">
+					<match>\b(macro|define)+(^|$|[ \t]|)+(\w+)+(^|$|[ \t]|)\b</match>
+				</context>
+				<context id="structs-def" style-ref="preprocessor">
+					<match>\b(struc|restruc|istruc)+(^|$|[ \t]|)+(\w+)+(^|$|[ \t]|)\b</match>
 				</context>
 				<context id="macros-nasm-assembler" style-ref="macro">
 					<match>(?-i)(^|$|[ \t]|)+\b(__)\?(NASM_MAJOR|NASM_MINOR|NASM_SUBMINOR|NASM_PATCHLEVEL|NASM_SNAPSHOT|NASM_VERSION_ID|NASM_VER|FILE|LINE|BITS|OUTPUT_FORMAT|DEBUG_FORMAT|DATE|TIME|DATE_NUM|TIME_NUM|UTC_DATE|UTC_TIME|UTC_DATE_NUM|UTC_TIME_NUM|POSIX_TIME|PASS|SECT)\?(__)+\b(^|$|[ \t]|)</match>
@@ -268,9 +277,10 @@ version: 3.0
 					<keyword>yword</keyword>
 					<keyword>zword</keyword>
 
+					<keyword>define</keyword>
 					<keyword>istruc</keyword>
 					<keyword>iend</keyword>
-
+					
 					<keyword>float</keyword>
 					<keyword>cpu</keyword>
 
