@@ -12,7 +12,7 @@ https://www.felixcloutier.com/x86/
 <!-- About this Highlighting File-Lang
 web: https://github.com/GabrielFrigo4/Custom-Highlight-Languages/blob/main/gnome-text-editor/asm-intel.lang
 assembler sintax: NASM, FASM, GAS
-version: 3.1
+version: 3.2
 -->
 <language id="assembler" name="Assembler (Intel)" version="2.0" section="Sources">
 	<metadata>
@@ -93,46 +93,30 @@ version: 3.1
 					<match>\b0[0-9a-fA-F][Hh]\b</match>
 				</context>
 				<context id="equal-def" style-ref="preprocessor">
-					<match>(\w+)+(^|$|[ \t]|)+(?=equ|\=)+(^|$|[ \t]|)</match>
+					<match>(\w+)+([ \t]|)+(?=equ|\=)+([ \t]|)</match>
 				</context>
 				<context id="macros-def" style-ref="preprocessor">
-					<match>\b(macro|define)+(^|$|[ \t]|)+(\w+)+(^|$|[ \t]|)\b</match>
+					<match>\b(macro|define)+(|[ \t]|)+(\w+)\b</match>
 				</context>
 				<context id="structs-def" style-ref="preprocessor">
-					<match>\b(struc|restruc|istruc)+(^|$|[ \t]|)+(\w+)+(^|$|[ \t]|)\b</match>
+					<match>\b(struc|restruc|istruc)+([ \t]|)+(\w+)\b</match>
 				</context>
 				<context id="macros-nasm-assembler" style-ref="macro">
-					<match>(?-i)(^|$|[ \t]|)+\b(__)\?(NASM_MAJOR|NASM_MINOR|NASM_SUBMINOR|NASM_PATCHLEVEL|NASM_SNAPSHOT|NASM_VERSION_ID|NASM_VER|FILE|LINE|BITS|OUTPUT_FORMAT|DEBUG_FORMAT|DATE|TIME|DATE_NUM|TIME_NUM|UTC_DATE|UTC_TIME|UTC_DATE_NUM|UTC_TIME_NUM|POSIX_TIME|PASS|SECT)\?(__)+\b(^|$|[ \t]|)</match>
+					<match>(?-i)\b(__)\b\?(NASM_MAJOR|NASM_MINOR|NASM_SUBMINOR|NASM_PATCHLEVEL|NASM_SNAPSHOT|NASM_VERSION_ID|NASM_VER|FILE|LINE|BITS|OUTPUT_FORMAT|DEBUG_FORMAT|DATE|TIME|DATE_NUM|TIME_NUM|UTC_DATE|UTC_TIME|UTC_DATE_NUM|UTC_TIME_NUM|POSIX_TIME|PASS|SECT)\?\b(__)+\b</match>
 				</context>
 				<context id="macros-nasm-float" style-ref="macro">
-					<match>(?-i)(^|$|[ \t]|)+\b(__)\?(Infinity|QNaN|SNaN|float8|float16|bfloat16|float32|float64|float80m|float80e|float128l|float128h)\?(__)+\b(^|$|[ \t]|)</match>
+					<match>(?-i)\b(__)\b\?(Infinity|QNaN|SNaN|float8|float16|bfloat16|float32|float64|float80m|float80e|float128l|float128h)\?\b(__)+\b</match>
 				</context>
 				<context id="macros-nasm-string" style-ref="macro">
-					<match>(?-i)(^|$|[ \t]|)+\b(__)\?(utf16|utf16le|utf16be|utf32|utf32le|utf32be)\?(__)+\b(^|$|[ \t]|)</match>
+					<match>(?-i)\b(__)\b\?(utf16|utf16le|utf16be|utf32|utf32le|utf32be)\?\b(__)+\b</match>
 				</context>
 				<context id="sections" style-ref="section">
-					<keyword>code</keyword>
-					<keyword>text</keyword>
-					<keyword>bss</keyword>
-					<keyword>rdata</keyword>
-					<keyword>rodata</keyword>
-					<keyword>pdata</keyword>
-					<keyword>xdata</keyword>
-					<keyword>data</keyword>
-
-					<keyword>lrodata</keyword>
-					<keyword>ldata</keyword>
-					<keyword>lbss</keyword>
-					<keyword>tdata</keyword>
-					<keyword>tbss</keyword>
-					<keyword>comment</keyword>
-					<keyword>init_array</keyword>
-					<keyword>fini_array</keyword>
-					<keyword>note</keyword>
-					<keyword>other</keyword>
+					<match>((?&lt;=(^\.))|(?&lt;=( \.))|(?&lt;=(\t\.)))\b(code|text|bss|data|rdata|rodata|pdata|xdata|lbss|ldata|lrodata|tbss|tdata|comment|init_array|fini_array|note|other)\b</match>
 				</context>
 				<context id="sections-fasm" style-ref="section">
 					<!-- FASM -->
+					<keyword>code</keyword>
+					<keyword>data</keyword>
 					<keyword>readable</keyword>
 					<keyword>writeable</keyword>
 					<keyword>writable</keyword>
@@ -387,46 +371,16 @@ version: 3.1
 					<keyword>irps</keyword>
 					<keyword>irpv</keyword>
 				</context>
+				<context id="types-gas" style-ref="preprocessor">
+					<match>((?&lt;=(^\.))|(?&lt;=( \.))|(?&lt;=(\t\.)))\b(byte|short|word|hword|long|int|quad|float|single|double|ascii|string|string8|asciz|string16|string32|string64|xmmword|ymmword|zmmword)\b</match>
+				</context>
+				<context id="dot-commands-gas" style-ref="preprocessor">
+					<match>((?&lt;=(^\.))|(?&lt;=( \.))|(?&lt;=(\t\.)))\b(intel_syntax|file|def|globl|space|code16|code32|code64|set|macro|endm|exitm|equ)\b</match>
+				</context>
 				<context id="commands-gas" style-ref="preprocessor">
 					<!-- GAS -->
-					<keyword>byte</keyword>
-					<keyword>short</keyword>
-					<keyword>hword</keyword>
-					<keyword>long</keyword>
-					<keyword>int</keyword>
-					<keyword>quad</keyword>
-
-					<keyword>float</keyword>
-					<keyword>single</keyword>
-					<keyword>double</keyword>
-					
-					<keyword>ascii</keyword>
-					<keyword>string</keyword>
-					<keyword>string8</keyword>
-					<keyword>asciz</keyword>
-					<keyword>string16</keyword>
-					<keyword>string32</keyword>
-					<keyword>string64</keyword>
-
-					<keyword>xmmword</keyword>
-					<keyword>ymmword</keyword>
-					<keyword>zmmword</keyword>
-
-					<keyword>set</keyword>
-					<keyword>exitm</keyword>
-					<keyword>endm</keyword>
-
-					<keyword>intel_syntax</keyword>
 					<keyword>noprefix</keyword>
 					<keyword>ptr</keyword>
-					<keyword>file</keyword>
-					<keyword>def</keyword>
-					<keyword>globl</keyword>
-					<keyword>space</keyword>
-
-					<keyword>code16</keyword>
-					<keyword>code32</keyword>
-					<keyword>code64</keyword>
 				</context>
 				<context id="commands-options-nasm" style-ref="keyword">
 					<!-- NASM -->
