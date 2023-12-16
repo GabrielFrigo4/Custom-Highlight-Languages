@@ -227,6 +227,7 @@ version: 3.2
 					<keyword>dy</keyword>
 					<keyword>dz</keyword>
 
+					<keyword>file</keyword>
 					<keyword>rb</keyword>
 					<keyword>rw</keyword>
 					<keyword>rd</keyword>
